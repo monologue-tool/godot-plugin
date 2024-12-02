@@ -1,0 +1,160 @@
+[gd_scene load_steps=10 format=3 uid="uid://byobrgy5is3f4"]
+
+[ext_resource type="Theme" uid="uid://cdo7e18gp5hgn" path="res://example/theme/theme.tres" id="1_blgbs"]
+[ext_resource type="PackedScene" uid="uid://bwt4chmtoqxcp" path="res://example/scenes/common/choice_selector/choice_selector.tscn" id="1_u1kfa"]
+[ext_resource type="Script" path="res://addons/monologue/layout/monologue_text_box.gd" id="2_ixdde"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ws5cw"]
+bg_color = Color(0.176, 0.176, 0.176, 0.5)
+border_width_top = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1yl16"]
+content_margin_left = 20.0
+content_margin_right = 20.0
+bg_color = Color(0.073, 0.073, 0.073, 0.5)
+skew = Vector2(0.5, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+shadow_color = Color(0, 0, 0, 0.1)
+shadow_size = 38
+
+[sub_resource type="Animation" id="1"]
+resource_name = "fade_in"
+length = 0.5
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="2"]
+resource_name = "fade_out"
+length = 0.433333
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.433333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="3"]
+resource_name = "setup"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wkikl"]
+_data = {
+"fade_in": SubResource("1"),
+"fade_out": SubResource("2"),
+"setup": SubResource("3")
+}
+
+[node name="TextBox" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ws5cw")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Control"]
+layout_mode = 0
+offset_left = 75.0
+offset_top = -28.0
+offset_right = 325.0
+offset_bottom = 27.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_1yl16")
+
+[node name="Label" type="Label" parent="Control/PanelContainer"]
+layout_mode = 2
+theme = ExtResource("1_blgbs")
+theme_override_font_sizes/font_size = 26
+text = "Name"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 150
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 150
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="MonologueTextBox" type="RichTextLabel" parent="MarginContainer/VBoxContainer" node_paths=PackedStringArray("speaker_container", "speaker_label")]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme = ExtResource("1_blgbs")
+bbcode_enabled = true
+text = "Text body"
+script = ExtResource("2_ixdde")
+speaker_container = NodePath("../../../Control/PanelContainer")
+speaker_label = NodePath("../../../Control/PanelContainer/Label")
+
+[node name="ChoiceSelector" parent="MarginContainer/VBoxContainer" instance=ExtResource("1_u1kfa")]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="FadeAnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_wkikl")
+}
+autoplay = "setup"

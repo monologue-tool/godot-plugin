@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://bowhgj32i7bue"]
+
+[ext_resource type="Script" path="res://example/scenes/common/character_displayer/character_displayer.gd" id="1_f1qeg"]
+
+[node name="CharacterDisplayer" type="Node2D"]
+script = ExtResource("1_f1qeg")
+
+[node name="Left" type="Sprite2D" parent="."]
+position = Vector2(288, 655)
+
+[node name="Center" type="Sprite2D" parent="."]
+position = Vector2(576, 655)
+
+[node name="Right" type="Sprite2D" parent="."]
+position = Vector2(864, 655)

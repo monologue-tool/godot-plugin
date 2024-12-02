@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://42m7batmpdut"]
+
+[ext_resource type="PackedScene" uid="uid://byobrgy5is3f4" path="res://example/scenes/common/text_box/text_box.tscn" id="1_62y8m"]
+[ext_resource type="Script" path="res://example/scenes/main/main.gd" id="1_bcq87"]
+[ext_resource type="PackedScene" uid="uid://bowhgj32i7bue" path="res://example/scenes/common/character_displayer/character_displayer.tscn" id="2_oy43g"]
+[ext_resource type="Script" path="res://addons/monologue/core/monologue_process.gd" id="4_ibd75"]
+[ext_resource type="Script" path="res://addons/monologue/core/monologue_process_settings.gd" id="5_es2q8"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bcq87")
+storyline_path = "res://example/resources/intro.json"
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 6
+
+[node name="CharacterDisplayer" parent="." instance=ExtResource("2_oy43g")]
+
+[node name="TextBox" parent="." instance=ExtResource("1_62y8m")]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+offset_top = -200.0
+grow_vertical = 0
+
+[node name="MonologueProcess" type="Node" parent="." node_paths=PackedStringArray("settings", "text_box", "choice_selector", "background")]
+script = ExtResource("4_ibd75")
+settings = NodePath("MonologueProcessSettings")
+text_box = NodePath("../TextBox/MarginContainer/VBoxContainer/MonologueTextBox")
+choice_selector = NodePath("../TextBox/MarginContainer/VBoxContainer/ChoiceSelector")
+background = NodePath("../Background")
+
+[node name="MonologueProcessSettings" type="Node" parent="MonologueProcess"]
+script = ExtResource("5_es2q8")
+
+[editable path="TextBox"]

@@ -1,0 +1,742 @@
+{
+	"EditorVersion": "2.3.0",
+	"RootNodeID": "KuF40hizq3",
+	"ListNodes": [
+		{
+			"$type": "NodeSetter",
+			"ID": "ET0i1knsbP",
+			"NextID": "2jK5L0x3rN",
+			"SetType": "Variable",
+			"Variable": "radio_on",
+			"Operator": "=",
+			"Value": false,
+			"EditorPosition": {
+				"x": 1200,
+				"y": 150
+			}
+		},
+		{
+			"$type": "NodeSentence",
+			"ID": "2jK5L0x3rN",
+			"NextID": "KexXORlRCV",
+			"Speaker": "",
+			"DisplayName": "",
+			"DisplayVariant": "",
+			"Sentence": "Je tends la main vers la radio et l'éteint. L'instant d'après j'oublie quelle musique passait.",
+			"Voiceline": "",
+			"EditorPosition": {
+				"x": 1560,
+				"y": 120
+			}
+		},
+		{
+			"$type": "NodeSentence",
+			"ID": "9JdbArDUC5",
+			"NextID": "rDTakqjqyT",
+			"Speaker": "",
+			"DisplayName": "",
+			"DisplayVariant": "",
+			"Sentence": "Le frigo est plein. Des aliments parfaitement rangés.",
+			"Voiceline": "",
+			"EditorPosition": {
+				"x": 2460,
+				"y": 420
+			}
+		},
+		{
+			"$type": "NodeSentence",
+			"ID": "J7zFMyNovI",
+			"NextID": "0eQ2itS1ho",
+			"Speaker": "",
+			"DisplayName": "",
+			"DisplayVariant": "",
+			"Sentence": "Il me fait son signe de tête habituel.",
+			"Voiceline": "",
+			"EditorPosition": {
+				"x": 4620,
+				"y": 390
+			}
+		},
+		{
+			"$type": "NodeSentence",
+			"ID": "di2az13qmZ",
+			"NextID": "0eQ2itS1ho",
+			"Speaker": "",
+			"DisplayName": "",
+			"DisplayVariant": "",
+			"Sentence": "Je m'approche du kiosque. Les gros titres... ils semblent flou. Je n'ai peut-être pas assez dormis.",
+			"Voiceline": "",
+			"EditorPosition": {
+				"x": 4620,
+				"y": 510
+			}
+		},
+		{
+			"$type": "NodeChoice",
+			"ID": "AH2tSd8vzH",
+			"NextID": "BHtC8XPuAO",
+			"OptionsID": [
+				"GzZt8XX9PG",
+				"WANiOaxPPj",
+				"byQ79tFs86",
+				"sHj28PPSPj"
+			],
+			"EditorPosition": {
+				"x": 840,
+				"y": 0
+			}
+		},
+		{
+			"$type": "NodeOption",
+			"ID": "GzZt8XX9PG",
+			"NextID": "BHtC8XPuAO",
+			"Option": "Rester au lit encore 5 minutes",
+			"EnableByDefault": true,
+			"OneShot": true,
+			"EditorPosition": {
+				"x": 0,
+				"y": 0
+			}
+		},
+		{
+			"$type": "NodeOption",
+			"ID": "WANiOaxPPj",
+			"NextID": "YOR7Or05UB",
+			"Option": "Se lever immédiatement",
+			"EnableByDefault": true,
+			"OneShot": false,
+			"EditorPosition": {
+				"x": 0,
+				"y": 0
+			}
+		},
+		{
+			"$type": "NodeOption",
+			"ID": "byQ79tFs86",
+			"NextID": "ET0i1knsbP",
+			"Option": "Éteindre la radio",
+			"EnableByDefault": true,
+			"OneShot": true,
+			"EditorPosition": {
+				"x": 0,
+				"y": 0
+			}
+		},
+		{
+			"$type": "NodeOption",
+			"ID": "sHj28PPSPj",
+			"NextID": "YOR7Or05UB",
+			"Option": "Se lever",
+			"EnableByDefault": false,
+			"OneShot": false,
+			"EditorPosition": {
+				"x": 0,
+				"y": 0
+			}
+		},
+		{
+			"$type": "NodeSentence",
+			"ID": "YOR7Or05UB",
+			"NextID": "PRwJxosiJU",
+			"Speaker": "",
+			"DisplayName": "",
+			"DisplayVariant": "",
+			"Sentence": "Après avoir enfilé mes chaussons, la routine du matin commence.",
+			"Voiceline": "",
+			"EditorPosition": {
+				"x": 1200,
+				"y": 300
+			}
+		},
+		{
+			"$type": "NodeSentence",
+			"ID": "PRwJxosiJU",
+			"NextID": "2QWsxK6FYH",
+			"Speaker": "",
+			"DisplayName": "",
+			"DisplayVariant": "",
+			"Sentence": "[i]Dans la Cuisine[/i]\n\nLe grille-pain fait encore des siennes. La tartine est à moitié brûlée.",
+			"Voiceline": "",
+			"EditorPosition": {
+				"x": 1650,
+				"y": 300
+			}
+		},
+		{
+			"$type": "NodeChoice",
+			"ID": "mWb9YVJ1qz",
+			"NextID": "J7zFMyNovI",
+			"OptionsID": [
+				"XarRF5ODMb",
+				"MU6Yrh1YDH"
+			],
+			"EditorPosition": {
+				"x": 4260,
+				"y": 390
+			}
+		},
+		{
+			"$type": "NodeOption",
+			"ID": "XarRF5ODMb",
+			"NextID": "J7zFMyNovI",
+			"Option": "L'ignorer comme d'habitude",
+			"EnableByDefault": true,
+			"OneShot": false,
+			"EditorPosition": {
+				"x": 0,
+				"y": 0
+			}
+		},
+		{
+			"$type": "NodeOption",
+			"ID": "MU6Yrh1YDH",
+			"NextID": "di2az13qmZ",
+			"Option": "Acheter un journal pour une fois",
+			"EnableByDefault": true,
+			"OneShot": false,
+			"EditorPosition": {
+				"x": 0,
+				"y": 0
+			}
+		},
+		{
+			"$type": "NodeSentence",
+			"ID": "rDTakqjqyT",
+			"NextID": "KjFBsHhNG6",
+			"Speaker": "",
+			"DisplayName": "",
+			"DisplayVariant": "",
+			"Sentence": "Vous plongez dans le reflet de votre tasse de café qui vous renvoie une image troublée. Le sommeil vous fuit depuis près de deux semaines maintenant. Les nuits ne sont pas pénibles, non, mais elles ont perdu leur caractère réparateur. Les rêves aussi se sont évaporés. Est-ce le travail ? La famille ? Ou simplement une mauvaise passe ?",
+			"Voiceline": "",
+			"EditorPosition": {
+				"x": 2910,
+				"y": 330
+			}
+		},
+		{
+			"$type": "NodeChoice",
+			"ID": "2QWsxK6FYH",
+			"NextID": "dbKbZZs0tj",
+			"OptionsID": [
+				"UgHOcEE6ut",
+				"MEIDPVeiKM",
+				"5PbNNbBtPj"
+			],
+			"EditorPosition": {
+				"x": 2100,
+				"y": 300
+			}
+		},
+		{
+			"$type": "NodeOption",
+			"ID": "UgHOcEE6ut",
+			"NextID": "dbKbZZs0tj",
+			"Option": "Manger la tartine brûlée",
+			"EnableByDefault": true,
+			"OneShot": false,
+			"EditorPosition": {
+				"x": 0,
+				"y": 0
+			}
+		},
+		{
+			"$type": "NodeOption",
+			"ID": "MEIDPVeiKM",
+			"NextID": "9JdbArDUC5",
+			"Option": "Chercher autre chose dans le frigo",
+			"EnableByDefault": true,
+			"OneShot": false,
+			"EditorPosition": {
+				"x": 0,
+				"y": 0
+			}
+		},
+		{
+			"$type": "NodeOption",
+			"ID": "5PbNNbBtPj",
+			"NextID": "Sj8DtwxYGq",
+			"Option": "Ne pas manger.",
+			"EnableByDefault": true,
+			"OneShot": false,
+			"EditorPosition": {
+				"x": 0,
+				"y": 0
+			}
+		},
+		{
+			"$type": "NodeSentence",
+			"ID": "KjFBsHhNG6",
+			"NextID": "oZicckGEgB",
+			"Speaker": "",
+			"DisplayName": "",
+			"DisplayVariant": "",
+			"Sentence": "Cette brève introspection s'évanouit soudain, laissant place à la réalité de cette journée particulière. Aujourd'hui est le grand jour : vous allez enfin devenir explorateur.",
+			"Voiceline": "",
+			"EditorPosition": {
+				"x": 3360,
+				"y": 390
+			}
+		},
+		{
+			"$type": "NodeSentence",
+			"ID": "oZicckGEgB",
+			"NextID": "mWb9YVJ1qz",
+			"Speaker": "",
+			"DisplayName": "",
+			"DisplayVariant": "",
+			"Sentence": "[i]Sur le chemin du travail[/i]\n\nLe vendeur de journaux est à son coin habituel.",
+			"Voiceline": "",
+			"EditorPosition": {
+				"x": 3810,
+				"y": 390
+			}
+		},
+		{
+			"$type": "NodeChoice",
+			"ID": "rOiAIjGbue",
+			"NextID": "ZarjAkFpsw",
+			"OptionsID": [
+				"kqUVahRr5n",
+				"vKLtI1GRip"
+			],
+			"EditorPosition": {
+				"x": 5520,
+				"y": 390
+			}
+		},
+		{
+			"$type": "NodeOption",
+			"ID": "kqUVahRr5n",
+			"NextID": "ZarjAkFpsw",
+			"Option": "Descendre du métro",
+			"EnableByDefault": true,
+			"OneShot": false,
+			"EditorPosition": {
+				"x": 0,
+				"y": 0
+			}
+		},
+		{
+			"$type": "NodeOption",
+			"ID": "vKLtI1GRip",
+			"NextID": "8kUbCbZpKh",
+			"Option": "Attendre",
+			"EnableByDefault": true,
+			"OneShot": false,
+			"EditorPosition": {
+				"x": 0,
+				"y": 0
+			}
+		},
+		{
+			"$type": "NodeEndPath",
+			"ID": "qX4DxOLod1",
+			"NextID": -1,
+			"NextStory": "",
+			"EditorPosition": {
+				"x": 6330,
+				"y": 540
+			}
+		},
+		{
+			"$type": "NodeBridgeIn",
+			"ID": "vRCup2bjJO",
+			"NextID": "ttetc8ZVZi",
+			"NumberSelector": 3,
+			"EditorPosition": {
+				"x": 6330,
+				"y": 210
+			}
+		},
+		{
+			"$type": "NodeBridgeOut",
+			"ID": "ttetc8ZVZi",
+			"NextID": "bPh9zqA8E9",
+			"NumberSelector": 3,
+			"EditorPosition": {
+				"x": 240,
+				"y": 1350
+			}
+		},
+		{
+			"$type": "NodeChoice",
+			"ID": "11T9BQjR10",
+			"NextID": "LgkHxBDl61",
+			"OptionsID": [
+				"rdOxd8cgyX",
+				"ZMpXfi5vbP",
+				"Xf5h6LxItw"
+			],
+			"EditorPosition": {
+				"x": 930,
+				"y": 1350
+			}
+		},
+		{
+			"$type": "NodeOption",
+			"ID": "rdOxd8cgyX",
+			"NextID": "LgkHxBDl61",
+			"Option": "Où suis-je ?",
+			"EnableByDefault": true,
+			"OneShot": false,
+			"EditorPosition": {
+				"x": 0,
+				"y": 0
+			}
+		},
+		{
+			"$type": "NodeOption",
+			"ID": "ZMpXfi5vbP",
+			"NextID": "z2c0Azuial",
+			"Option": "Qui est-ce ?",
+			"EnableByDefault": true,
+			"OneShot": false,
+			"EditorPosition": {
+				"x": 0,
+				"y": 0
+			}
+		},
+		{
+			"$type": "NodeOption",
+			"ID": "Xf5h6LxItw",
+			"NextID": "YHbX3dg0rg",
+			"Option": " ...",
+			"EnableByDefault": true,
+			"OneShot": false,
+			"EditorPosition": {
+				"x": 0,
+				"y": 0
+			}
+		},
+		{
+			"$type": "NodeSentence",
+			"ID": "z2c0Azuial",
+			"NextID": -1,
+			"Speaker": "",
+			"DisplayName": "",
+			"DisplayVariant": "",
+			"Sentence": "",
+			"Voiceline": "",
+			"EditorPosition": {
+				"x": 1290,
+				"y": 1470
+			}
+		},
+		{
+			"$type": "NodeRoot",
+			"ID": "KuF40hizq3",
+			"NextID": "KMAWkxjVoh",
+			"EditorPosition": {
+				"x": 0,
+				"y": 0
+			}
+		},
+		{
+			"$type": "NodeSetter",
+			"ID": "Z4RQpfFojc",
+			"NextID": "AH2tSd8vzH",
+			"SetType": "Option",
+			"OptionID": "WANiOaxPPj",
+			"Enable": "",
+			"EditorPosition": {
+				"x": 450,
+				"y": 390
+			}
+		},
+		{
+			"$type": "NodeCondition",
+			"ID": "BHtC8XPuAO",
+			"IfNextID": "vMeZeDSMRF",
+			"ElseNextID": "sjHcNDYyN6",
+			"Variable": "radio_on",
+			"Operator": "=",
+			"Value": true,
+			"EditorPosition": {
+				"x": 1200,
+				"y": -30
+			}
+		},
+		{
+			"$type": "NodeSentence",
+			"ID": "sjHcNDYyN6",
+			"NextID": "KexXORlRCV",
+			"Speaker": "",
+			"DisplayName": "",
+			"DisplayVariant": "",
+			"Sentence": "Encore quelques minutes sous la couette, à entendre les voitures passer dans la rue.",
+			"Voiceline": "",
+			"EditorPosition": {
+				"x": 1560,
+				"y": -30
+			}
+		},
+		{
+			"$type": "NodeSentence",
+			"ID": "vMeZeDSMRF",
+			"NextID": "KexXORlRCV",
+			"Speaker": "",
+			"DisplayName": "",
+			"DisplayVariant": "",
+			"Sentence": "Encore quelques minutes sous la couette, à écouter la radio en fond. La musique, les infos, la météo, les embouteillages habituels.",
+			"Voiceline": "",
+			"EditorPosition": {
+				"x": 1560,
+				"y": -210
+			}
+		},
+		{
+			"$type": "NodeSentence",
+			"ID": "KMAWkxjVoh",
+			"NextID": "AH2tSd8vzH",
+			"Speaker": "",
+			"DisplayName": "",
+			"DisplayVariant": "",
+			"Sentence": "[i]6:30 - Le réveil sonne[/i]\n\nL'odeur du café monte déjà de la cuisine. La radio grésille doucement - toujours les mêmes chansons à la même heure.",
+			"Voiceline": "",
+			"EditorPosition": {
+				"x": 390,
+				"y": 0
+			}
+		},
+		{
+			"$type": "NodeSentence",
+			"ID": "1ObNTvmnbn",
+			"NextID": "Ct3S8A6xHa",
+			"Speaker": 1,
+			"DisplayName": "",
+			"DisplayVariant": "",
+			"Sentence": "N'est-ce pas votre propre ombre qui s'étend, plus vaste à mesure que vous poursuivez la lumière ? Ce que vous rejetez dans l'obscurité ne disparaît pas ; cela vous observe, cela s'amplifie. À force de chercher à devenir entier, vous vous fragmentez. Acceptez l'imperfection non pas comme un défaut, mais comme une invitation à danser avec ce que vous fuyez. Car ce n'est pas la lumière qui éclaire la vérité, mais la rencontre de l'ombre et du jour dans un équilibre fragile.",
+			"Voiceline": "",
+			"EditorPosition": {
+				"x": 1740,
+				"y": 1140
+			}
+		},
+		{
+			"$type": "NodeSentence",
+			"ID": "LgkHxBDl61",
+			"NextID": "1ObNTvmnbn",
+			"Speaker": "",
+			"DisplayName": "",
+			"DisplayVariant": "",
+			"Sentence": "Les mots s'échappent, trahissant votre désorientation. \"Je suis perdu...\"",
+			"Voiceline": "",
+			"EditorPosition": {
+				"x": 1290,
+				"y": 1320
+			}
+		},
+		{
+			"$type": "NodeSentence",
+			"ID": "YHbX3dg0rg",
+			"NextID": "V7Iqwtx0Yb",
+			"Speaker": 1,
+			"DisplayName": "",
+			"DisplayVariant": "",
+			"Sentence": "Qu'avez-vous vu ?",
+			"Voiceline": "",
+			"EditorPosition": {
+				"x": 1290,
+				"y": 1620
+			}
+		},
+		{
+			"$type": "NodeChoice",
+			"ID": "V7Iqwtx0Yb",
+			"NextID": -1,
+			"OptionsID": [
+				"Xf5lnlRnyS",
+				"xkhBZ2Fnoy"
+			],
+			"EditorPosition": {
+				"x": 1740,
+				"y": 1620
+			}
+		},
+		{
+			"$type": "NodeOption",
+			"ID": "Xf5lnlRnyS",
+			"NextID": -1,
+			"Option": "",
+			"EnableByDefault": true,
+			"OneShot": false,
+			"EditorPosition": {
+				"x": 0,
+				"y": 0
+			}
+		},
+		{
+			"$type": "NodeOption",
+			"ID": "xkhBZ2Fnoy",
+			"NextID": -1,
+			"Option": "",
+			"EnableByDefault": true,
+			"OneShot": false,
+			"EditorPosition": {
+				"x": 0,
+				"y": 0
+			}
+		},
+		{
+			"$type": "NodeSetter",
+			"ID": "D1ws1Q4Unf",
+			"NextID": "Z4RQpfFojc",
+			"SetType": "Option",
+			"OptionID": "sHj28PPSPj",
+			"Enable": true,
+			"EditorPosition": {
+				"x": 450,
+				"y": 270
+			}
+		},
+		{
+			"$type": "NodeBridgeOut",
+			"ID": "yf8yyvwxYy",
+			"NextID": "D1ws1Q4Unf",
+			"NumberSelector": 2,
+			"EditorPosition": {
+				"x": 210,
+				"y": 270
+			}
+		},
+		{
+			"$type": "NodeBridgeIn",
+			"ID": "KexXORlRCV",
+			"NextID": "yf8yyvwxYy",
+			"NumberSelector": 2,
+			"EditorPosition": {
+				"x": 2010,
+				"y": -30
+			}
+		},
+		{
+			"$type": "NodeSentence",
+			"ID": "dbKbZZs0tj",
+			"NextID": "rDTakqjqyT",
+			"Speaker": "",
+			"DisplayName": "",
+			"DisplayVariant": "",
+			"Sentence": "Le goût est... désagréable, je n'ai pas le sentiment d'avoir manger mais je n'avais pas tellement faim.",
+			"Voiceline": "",
+			"EditorPosition": {
+				"x": 2460,
+				"y": 240
+			}
+		},
+		{
+			"$type": "NodeSentence",
+			"ID": "Sj8DtwxYGq",
+			"NextID": "rDTakqjqyT",
+			"Speaker": "",
+			"DisplayName": "",
+			"DisplayVariant": "",
+			"Sentence": "De toute façon je n'ai pas très faim, mon estomac ne gronde pas.",
+			"Voiceline": "",
+			"EditorPosition": {
+				"x": 2460,
+				"y": 570
+			}
+		},
+		{
+			"$type": "NodeSentence",
+			"ID": "Ct3S8A6xHa",
+			"NextID": "mbZae71UKb",
+			"Speaker": 1,
+			"DisplayName": "",
+			"DisplayVariant": "",
+			"Sentence": "Apprenez à regarder chaques facettes de votre personnalité.",
+			"Voiceline": "",
+			"EditorPosition": {
+				"x": 2190,
+				"y": 1140
+			}
+		},
+		{
+			"$type": "NodeSentence",
+			"ID": "mbZae71UKb",
+			"NextID": -1,
+			"Speaker": "",
+			"DisplayName": "",
+			"DisplayVariant": "",
+			"Sentence": "Vous entendez cette phrase comme une sorte de révélation. Vous regardez le monolithe et vous vous sentez voyager.",
+			"Voiceline": "",
+			"EditorPosition": {
+				"x": 2640,
+				"y": 1140
+			}
+		},
+		{
+			"$type": "NodeSentence",
+			"ID": "bPh9zqA8E9",
+			"NextID": "11T9BQjR10",
+			"Speaker": "",
+			"DisplayName": "",
+			"DisplayVariant": "",
+			"Sentence": "Vous êtes assis. Ou debout ? C'est difficile à dire. Face à vous, une présence. Pas vraiment une forme, plutôt une suggestion de présence.",
+			"Voiceline": "",
+			"EditorPosition": {
+				"x": 480,
+				"y": 1350
+			}
+		},
+		{
+			"$type": "NodeSentence",
+			"ID": "8kUbCbZpKh",
+			"NextID": "qX4DxOLod1",
+			"Speaker": "",
+			"DisplayName": "",
+			"DisplayVariant": "",
+			"Sentence": "Les portes du métro se referment devant vous, vous voyez la station s'éffacer à mesure que le métro prend de la vitesse, vous reprenez vos esprits. Ce jour là vous n'irais pas au travail et vous ne serez jamais un explorateur.",
+			"Voiceline": "",
+			"EditorPosition": {
+				"x": 5880,
+				"y": 510
+			}
+		},
+		{
+			"$type": "NodeSentence",
+			"ID": "ZarjAkFpsw",
+			"NextID": "vRCup2bjJO",
+			"Speaker": "",
+			"DisplayName": "",
+			"DisplayVariant": "",
+			"Sentence": "Vous descendez du métro, votre cœur bat fort, vous stressez, les gens vous bousculent, les murs du couloir semblent perdre leur substance, comme de la peinture qui se dilue. Les bruits de la station s'estompent progressivement, remplacés par un silence cotonneux. Les détails familiers s'effacent un à un. Le carrelage sous vos pieds, les publicités sur les murs, les autres voyageurs - tout se fond dans une blancheur grandissante. Seul le chemin devant vous reste défini, comme une invitation. Vos pas résonnent désormais dans un espace qui semble infini. Le blanc a tout envahi, sauf... cette forme qui se dresse devant vous. Une structure sombre, géométrique, imposante.\n\n[b]Un monolithe.[/b]",
+			"Voiceline": "",
+			"EditorPosition": {
+				"x": 5880,
+				"y": 0
+			}
+		},
+		{
+			"$type": "NodeSentence",
+			"ID": "0eQ2itS1ho",
+			"NextID": "rOiAIjGbue",
+			"Speaker": "",
+			"DisplayName": "",
+			"DisplayVariant": "",
+			"Sentence": "Vous prenez le métro et une étrange sensation s'emparre de vous. Ce n'est pas la foule habituelle, non, c'est autre chose. Comme si chaque station vous éloignait un peu plus de quelque chose. Le métro s'arrête entre deux stations. Les lumières vacillent un instant. Dans l'obscurité passagère, vous apercevez quelque chose par la fenêtre. Une lueur ? Un reflet ? Non, c'était autre chose. Quelque chose qui n'aurait pas dû être là.\n\nLa rame s'arrête à votre station.",
+			"Voiceline": "",
+			"EditorPosition": {
+				"x": 5081,
+				"y": 330
+			}
+		}
+	],
+	"Characters": [
+		{
+			"Reference": "_NARRATOR",
+			"ID": 0
+		},
+		{
+			"Reference": "[•]",
+			"ID": 1
+		}
+	],
+	"Variables": [
+		{
+			"Name": "radio_on",
+			"Type": "Boolean",
+			"Value": true
+		}
+	]
+}
