@@ -1,5 +1,16 @@
-class_name MonologueProcessLogic extends RefCounted
+class_name MonologueProcessLogic extends Node
 
 
-func process(_ctx: MonologueContext, _node: Dictionary) -> MonologueProcessResult:
-	return MonologueProcessResult.exit_process("Empty process")
+signal process
+
+var is_processing: bool = false
+
+
+func enter(_ctx: MonologueContext, _node: Dictionary) -> MonologueProcessResult:
+	return
+
+func update(_ctx: MonologueContext, _node: Dictionary, _delta: float) -> MonologueProcessResult:
+	return
+
+func exit(_ctx: MonologueContext, _node: Dictionary) -> MonologueProcessResult:
+	return

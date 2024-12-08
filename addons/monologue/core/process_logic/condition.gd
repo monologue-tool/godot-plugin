@@ -1,7 +1,7 @@
 extends MonologueProcessLogic
 
 
-func process(ctx: MonologueContext, node: Dictionary) -> MonologueProcessResult:
+func enter(ctx: MonologueContext, node: Dictionary) -> MonologueProcessResult:
 	var variable: Dictionary = ctx.variables.get(node.get("Variable"))
 	var operator: String = node.get("Operator")
 	var condition_value: Variant = node.get("Value")

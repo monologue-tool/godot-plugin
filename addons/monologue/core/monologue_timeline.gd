@@ -6,8 +6,6 @@ signal selected_option(option: Dictionary)
 
 signal _input_next
 
-const KEY_END_OF_SCENE := -1
-
 var base_path: String
 var root_node_id: String
 var node_list: Array
@@ -36,6 +34,15 @@ var Sentence := preload("res://addons/monologue/core/process_logic/sentence.gd")
 var Setter := preload("res://addons/monologue/core/process_logic/setter.gd").new()
 var Wait := preload("res://addons/monologue/core/process_logic/wait.gd").new()
 
+var logic_nodes = [Action, Audio, Bridge, Choice, Condition, EndPath, Event, Random, Reroute, Root,
+	Sentence, Setter, Wait]
+
+var context := MonologueContext.new()
+var current_logic: MonologueProcessLogic = null
+var current_node: Dictionary = {}
+
+var _active: bool = false
+
 
 static func load(path: String) -> MonologueTimeline:
 	var file = FileAccess.open(path, FileAccess.READ)
@@ -44,6 +51,9 @@ static func load(path: String) -> MonologueTimeline:
 	var timeline := MonologueTimeline.new()
 	timeline.base_path = file.get_path().get_base_dir()
 	timeline._load_from_dict(data)
+	
+	#for node in timeline.logic_nodes:
+		#timeline.add_child(node)
 	
 	return timeline
 
@@ -80,59 +90,93 @@ func _load_resources(res_manager: MonologueResourceManager, node_type: String, p
 
 
 func process() -> void:
-	var context := MonologueContext.new()
 	context.nodes = node_list
 	context.timeline = self
 	context.settings = settings
 	context.next_node_id = root_node_id
 	
-	var key = 0
-	while key != KEY_END_OF_SCENE:
+	_active = true
+	while _active:
 		choice_selector._clear()
 		text_box.show()
 		
-		var node = context.get_node_from_id(context.next_node_id)
-		var node_type = node.get("$type")
+		current_node = context.get_node_from_id(context.next_node_id)
+		var node_type = current_node.get("$type")
 		
 		var process_result: MonologueProcessResult
 		match node_type:
 			"NodeAction":
-				process_result = await Action.process(context, node)
+				current_logic = Action
 			"NodeAudio":
-				process_result = await Audio.process(context, node)
+				current_logic = Audio
 			"NodeSentence":
-				process_result = await Sentence.process(context, node)
+				current_logic = Sentence
 			"NodeChoice":
-				process_result = await Choice.process(context, node)
+				current_logic = Choice
 			"NodeCondition":
-				process_result = await Condition.process(context, node)
+				current_logic = Condition
 			"NodeBridgeIn", "NodeBridgeOut":
-				process_result = await Bridge.process(context, node)
+				current_logic = Bridge
 			"NodeEndPath":
-				process_result = await EndPath.process(context, node)
+				current_logic = EndPath
 			"NodeEvent":
-				process_result = await Event.process(context, node)
+				current_logic = Event
 			"NodeRandom":
-				process_result = await Random.process(context, node)
+				current_logic = Random
 			"RerouteNode":
-				process_result = await Reroute.process(context, node)
+				current_logic = Reroute
 			"NodeRoot":
-				process_result = await Root.process(context, node)
+				current_logic = Root
 			"NodeSetter":
-				process_result = await Setter.process(context, node)
+				current_logic = Setter
 			"NodeWait":
-				process_result = await Wait.process(context, node)
+				current_logic = Wait
 			_:
-				process_result = MonologueProcessResult.exit_process("Riched an unknown node")
+				current_logic = null
+				
+		if current_logic == null:
+			process_result = MonologueProcessResult.exit_process("Riched an unknown node")
+		else:
+			current_logic.is_processing = true
+			process_result = await current_logic.enter(context, current_node)
 		
-		match process_result.type:
-			MonologueProcessResult.TYPE.CONTINUE:
-				context.next_node_id = process_result.data.get("next_node_id")
-			MonologueProcessResult.TYPE.INTERRUPT:
-				context.next_node_id = process_result.data.get("next_node_id")
-				await _input_next
-			MonologueProcessResult.TYPE.EXIT:
-				key = KEY_END_OF_SCENE
+		compute_process_result.call_deferred(process_result)
+		await current_logic.process
+		
+		if current_logic:
+			current_logic.exit(context, current_node)
+			current_logic.is_processing = false
+			
+		text_box.clear()
+		
+		# Fix an issue where update is called before the logic is active
+		await get_tree().process_frame
+		await get_tree().process_frame
+		await get_tree().process_frame
+
+
+func _process(delta: float) -> void:
+	if current_logic and current_logic.is_processing:
+		var process_result: MonologueProcessResult = current_logic.update(context, current_node, delta)
+		await compute_process_result(process_result)
+
+
+func compute_process_result(result: MonologueProcessResult) -> void:
+	if result == null:
+		return
+	
+	match result.type:
+		MonologueProcessResult.TYPE.CONTINUE:
+			context.next_node_id = result.data.get("next_node_id")
+			current_logic.process.emit()
+		MonologueProcessResult.TYPE.INTERRUPT:
+			context.next_node_id = result.data.get("next_node_id")
+			await _input_next
+			current_logic.process.emit()
+		MonologueProcessResult.TYPE.EXIT:
+			current_logic.exit(context, current_node)
+			current_logic.is_processing = false
+			_active = false
 
 
 func get_node_from_id(node_id: String) -> Dictionary:
@@ -156,8 +200,6 @@ func get_nodes_from_type(type: String) -> Array:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("ui_continue"):
-		if text_box.visible_characters != -1:
-			text_box.force_display()
 		_input_next.emit()
 
 

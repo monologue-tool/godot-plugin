@@ -1,7 +1,7 @@
 extends MonologueProcessLogic
 
 
-func process(ctx: MonologueContext, node: Dictionary) -> MonologueProcessResult:
+func enter(ctx: MonologueContext, node: Dictionary) -> MonologueProcessResult:
 	ctx.timeline.text_box.hide()
 	for opt_id in node.get("OptionsID"):
 		var option_node = ctx.options.get(opt_id)

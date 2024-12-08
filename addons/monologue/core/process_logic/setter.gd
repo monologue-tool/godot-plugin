@@ -1,7 +1,7 @@
 extends MonologueProcessLogic
 
 
-func process(ctx: MonologueContext, node: Dictionary) -> MonologueProcessResult:
+func enter(ctx: MonologueContext, node: Dictionary) -> MonologueProcessResult:
 	var set_type: String = node.get("SetType")
 	
 	match set_type:

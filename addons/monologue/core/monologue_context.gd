@@ -20,7 +20,7 @@ func get_next_node() -> Dictionary:
 
 
 func display_text(text: String, speaker_name: String = "", override_speed: int = settings.text_speed) -> void:
-	timeline.text_box.display(text, speaker_name, settings.text_speed)
+	timeline.text_box.display(text, speaker_name, override_speed)
 	await timeline.text_box.display_finished
 	
 
