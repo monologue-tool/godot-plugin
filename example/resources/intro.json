@@ -1,11 +1,11 @@
 {
-	"EditorVersion": "2.3.0",
+	"EditorVersion": "3.0.0-dev1",
 	"RootNodeID": "KuF40hizq3",
 	"ListNodes": [
 		{
 			"$type": "NodeSetter",
 			"ID": "ET0i1knsbP",
-			"NextID": "2jK5L0x3rN",
+			"NextID": "jY5ybV7hxN",
 			"SetType": "Variable",
 			"Variable": "radio_on",
 			"Operator": "=",
@@ -13,20 +13,6 @@
 			"EditorPosition": {
 				"x": 1200,
 				"y": 150
-			}
-		},
-		{
-			"$type": "NodeSentence",
-			"ID": "2jK5L0x3rN",
-			"NextID": "KexXORlRCV",
-			"Speaker": "",
-			"DisplayName": "",
-			"DisplayVariant": "",
-			"Sentence": "Je tends la main vers la radio et l'éteint. L'instant d'après j'oublie quelle musique passait.",
-			"Voiceline": "",
-			"EditorPosition": {
-				"x": 1560,
-				"y": 120
 			}
 		},
 		{
@@ -458,20 +444,6 @@
 		},
 		{
 			"$type": "NodeSentence",
-			"ID": "sjHcNDYyN6",
-			"NextID": "KexXORlRCV",
-			"Speaker": "",
-			"DisplayName": "",
-			"DisplayVariant": "",
-			"Sentence": "Encore quelques minutes sous la couette, à entendre les voitures passer dans la rue.",
-			"Voiceline": "",
-			"EditorPosition": {
-				"x": 1560,
-				"y": -30
-			}
-		},
-		{
-			"$type": "NodeSentence",
 			"ID": "vMeZeDSMRF",
 			"NextID": "KexXORlRCV",
 			"Speaker": "",
@@ -719,6 +691,55 @@
 			"EditorPosition": {
 				"x": 5081,
 				"y": 330
+			}
+		},
+		{
+			"$type": "NodeSentence",
+			"ID": "sjHcNDYyN6",
+			"NextID": "KexXORlRCV",
+			"Speaker": "",
+			"DisplayName": "",
+			"DisplayVariant": "",
+			"Sentence": "Encore quelques minutes sous la couette, à entendre les voitures passer dans la rue.",
+			"Voiceline": "",
+			"EditorPosition": {
+				"x": 1560,
+				"y": -30
+			}
+		},
+		{
+			"$type": "NodeReroute",
+			"ID": "jY5ybV7hxN",
+			"NextID": "KexXORlRCV",
+			"EditorPosition": {
+				"x": 1920,
+				"y": 150
+			}
+		},
+		{
+			"$type": "NodeSentence",
+			"ID": "2jK5L0x3rN",
+			"NextID": -1,
+			"Speaker": "",
+			"DisplayName": "",
+			"DisplayVariant": "",
+			"Sentence": "Je tends la main vers la radio et l'éteint. L'instant d'après j'oublie quelle musique passait.",
+			"Voiceline": "",
+			"EditorPosition": {
+				"x": 480,
+				"y": 780
+			}
+		},
+		{
+			"$type": "NodeEvent",
+			"ID": "XnLTXCvLWF",
+			"NextID": "2jK5L0x3rN",
+			"Variable": "radio_on",
+			"Operator": "=",
+			"Value": false,
+			"EditorPosition": {
+				"x": 90,
+				"y": 810
 			}
 		}
 	],

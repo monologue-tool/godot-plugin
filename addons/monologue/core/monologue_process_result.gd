@@ -12,14 +12,14 @@ var type: TYPE = TYPE.NONE
 var data: Dictionary = {}
 
 
-static func continue_process(next_node_id: String) -> MonologueProcessResult:
+static func continue_process(next_node_id: Variant) -> MonologueProcessResult:
 	var result := MonologueProcessResult.new()
 	result.type = TYPE.CONTINUE
 	result.data["next_node_id"] = next_node_id
 	return result
 
 
-static func interrupt_process(next_node_id: String) -> MonologueProcessResult:
+static func interrupt_process(next_node_id: Variant) -> MonologueProcessResult:
 	var result := MonologueProcessResult.new()
 	result.type = TYPE.INTERRUPT
 	result.data["next_node_id"] = next_node_id

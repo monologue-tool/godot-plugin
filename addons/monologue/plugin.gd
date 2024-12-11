@@ -23,3 +23,4 @@ func _exit_tree() -> void:
 	# Clean-up of the plugin goes here.
 	remove_custom_type("MonologueProcess")
 	remove_custom_type("MonologueProcessSettings")
+	remove_custom_type("MonologueTextBox")

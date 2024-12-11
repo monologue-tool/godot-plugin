@@ -1,25 +1,32 @@
 class_name MonologueTimeline extends Node
 
-
+# Signals to track node and option states
+signal timeline_ended
 signal node_reached(node: Dictionary)
 signal selected_option(option: Dictionary)
-
 signal _input_next
 
+# Basic timeline properties
 var base_path: String
 var root_node_id: String
 var node_list: Array
+var fallback_id_stack: Array = []
+
+# Resource managers
 var images := MonologueResourceManager.new()
 var audios := MonologueResourceManager.new()
 var voicelines := MonologueResourceManager.new()
 
+# Timeline variables and options
 var variables: Dictionary = {}
 var options: Dictionary = {}
 
+# UI component references
 var text_box: MonologueTextBox
 var choice_selector
 var settings: MonologueProcessSettings
 
+# Preload and instantiate logic nodes
 var Action := preload("res://addons/monologue/core/process_logic/action.gd").new()
 var Audio := preload("res://addons/monologue/core/process_logic/audio.gd").new()
 var Bridge := preload("res://addons/monologue/core/process_logic/bridge.gd").new()
@@ -34,16 +41,19 @@ var Sentence := preload("res://addons/monologue/core/process_logic/sentence.gd")
 var Setter := preload("res://addons/monologue/core/process_logic/setter.gd").new()
 var Wait := preload("res://addons/monologue/core/process_logic/wait.gd").new()
 
-var logic_nodes = [Action, Audio, Bridge, Choice, Condition, EndPath, Event, Random, Reroute, Root,
-	Sentence, Setter, Wait]
+# List of available logic nodes
+var logic_nodes = [Action, Audio, Bridge, Choice, 
+	Condition, EndPath, Event, Random, 
+	Reroute, Root, Sentence, Setter, Wait]
 
+# Context and current state of the timeline
 var context := MonologueContext.new()
 var current_logic: MonologueProcessLogic = null
 var current_node: Dictionary = {}
-
+var last_result: MonologueProcessResult
 var _active: bool = false
 
-
+# Static method to load a timeline from a file
 static func load(path: String) -> MonologueTimeline:
 	var file = FileAccess.open(path, FileAccess.READ)
 	var data: Dictionary = JSON.parse_string(file.get_as_text())
@@ -52,48 +62,49 @@ static func load(path: String) -> MonologueTimeline:
 	timeline.base_path = file.get_path().get_base_dir()
 	timeline._load_from_dict(data)
 	
-	#for node in timeline.logic_nodes:
-		#timeline.add_child(node)
+	for node in timeline.logic_nodes:
+		timeline.add_child(node)
 	
 	return timeline
 
-
+# Load timeline data from a dictionary
 func _load_from_dict(dict: Dictionary) -> void:
 	node_list = dict.get("ListNodes", [])
 	root_node_id = dict.get("RootNodeID")
 	
-	for variable in dict.get("Variables"):
+	# Load variables
+	for variable in dict.get("Variables", []):
 		variables[variable.get("Name")] = variable
 	
+	# Load options
 	for option in get_nodes_from_type("NodeOption"):
 		options[option.get("ID")] = option
-		options[option.get("ID")]["Enable"] = option.get("EnableByDefault")
+		options[option.get("ID")]["Enable"] = option.get("EnableByDefault", true)
 	
+	# Load resources
 	_load_resources(images, "NodeBackground", "Image")
-	print("[Monologue] load %s images" % images.size())
-	
 	_load_resources(audios, "NodeAudio", "Audio")
-	print("[Monologue] load %s audio files" % audios.size())
-	
 	_load_resources(voicelines, "NodeSentence", "Voiceline")
-	print("[Monologue] load %s voicelines" % audios.size())
 	
+	# Print loading statistics
+	print("[Monologue] Loaded %s images" % images.size())
+	print("[Monologue] Loaded %s audio files" % audios.size())
+	print("[Monologue] Loaded %s voicelines" % voicelines.size())
 
-
+# Load resources for a specific node type
 func _load_resources(res_manager: MonologueResourceManager, node_type: String, property_name: String) -> void:
-	var nodes = get_nodes_from_type(node_type)
-	for node in nodes:
-		if node.get(property_name) == "":
+	for node in get_nodes_from_type(node_type):
+		var resource_path = node.get(property_name, "")
+		if resource_path.is_empty():
 			continue
-		var resource_path = _get_correct_path(node.get(property_name, ""))
-		res_manager.load_resource(resource_path, node.get("ID"))
+		res_manager.load_resource(_get_correct_path(resource_path), node.get("ID"))
 
-
-func process() -> void:
+# Main timeline processing method
+func process(from_node_id: String = root_node_id) -> void:
 	context.nodes = node_list
 	context.timeline = self
 	context.settings = settings
-	context.next_node_id = root_node_id
+	context.next_node_id = from_node_id
 	
 	_active = true
 	while _active:
@@ -103,80 +114,106 @@ func process() -> void:
 		current_node = context.get_node_from_id(context.next_node_id)
 		var node_type = current_node.get("$type")
 		
-		var process_result: MonologueProcessResult
-		match node_type:
-			"NodeAction":
-				current_logic = Action
-			"NodeAudio":
-				current_logic = Audio
-			"NodeSentence":
-				current_logic = Sentence
-			"NodeChoice":
-				current_logic = Choice
-			"NodeCondition":
-				current_logic = Condition
-			"NodeBridgeIn", "NodeBridgeOut":
-				current_logic = Bridge
-			"NodeEndPath":
-				current_logic = EndPath
-			"NodeEvent":
-				current_logic = Event
-			"NodeRandom":
-				current_logic = Random
-			"RerouteNode":
-				current_logic = Reroute
-			"NodeRoot":
-				current_logic = Root
-			"NodeSetter":
-				current_logic = Setter
-			"NodeWait":
-				current_logic = Wait
-			_:
-				current_logic = null
-				
+		# Select logic handler based on node type
+		current_logic = _get_logic_for_node_type(node_type)
+		
 		if current_logic == null:
-			process_result = MonologueProcessResult.exit_process("Riched an unknown node")
-		else:
-			current_logic.is_processing = true
-			process_result = await current_logic.enter(context, current_node)
+			# Stop process if node type is unknown
+			var process_result = MonologueProcessResult.exit_process("Reached an unknown node")
+			break
+		
+		current_logic.is_processing = true
+		var logic_data: Dictionary = {}
+		if last_result != null:
+			logic_data = last_result.data
+		var process_result = await current_logic.enter(context, current_node, logic_data)
 		
 		compute_process_result.call_deferred(process_result)
 		await current_logic.process
 		
-		if current_logic:
-			current_logic.exit(context, current_node)
-			current_logic.is_processing = false
-			
+		current_logic.exit(context, current_node)
+		current_logic.is_processing = false
+		
 		text_box.clear()
 		
-		# Fix an issue where update is called before the logic is active
+		# Ensure proper update
+		process_mode = PROCESS_MODE_DISABLED
 		await get_tree().process_frame
 		await get_tree().process_frame
+		process_mode = PROCESS_MODE_INHERIT
+		
 		await get_tree().process_frame
+	
+	timeline_ended.emit()
+	return
+
+# Utility method to get appropriate logic handler
+func _get_logic_for_node_type(node_type: String) -> MonologueProcessLogic:
+	match node_type:
+		"NodeAction": return Action
+		"NodeAudio": return Audio
+		"NodeSentence": return Sentence
+		"NodeChoice": return Choice
+		"NodeCondition": return Condition
+		"NodeBridgeIn", "NodeBridgeOut": return Bridge
+		"NodeEndPath": return EndPath
+		"NodeEvent": return Event
+		"NodeRandom": return Random
+		"NodeReroute": return Reroute
+		"NodeRoot": return Root
+		"NodeSetter": return Setter
+		"NodeWait": return Wait
+		_: return null
 
 
 func _process(delta: float) -> void:
 	if current_logic and current_logic.is_processing:
 		var process_result: MonologueProcessResult = current_logic.update(context, current_node, delta)
-		await compute_process_result(process_result)
+		compute_process_result(process_result)
+	
+	for node in node_list:
+		var logic_node = _get_logic_for_node_type(node.get("$type"))
+		if logic_node == null:
+			continue
+		
+		var process_result: MonologueProcessResult = logic_node.active_update(context, node)
+		compute_process_result(process_result)
 
 
 func compute_process_result(result: MonologueProcessResult) -> void:
-	if result == null:
+	if result == null or result.type == MonologueProcessResult.TYPE.NONE:
 		return
+	
+	var next_node_id: Variant = null
+	if result.data.get("next_node_id") is String:
+		next_node_id = result.data.get("next_node_id")
+	else:
+		var next_fallback_id = fallback_id_stack.pop_front()
+		if next_fallback_id:
+			next_node_id = next_fallback_id
+	
+	if next_node_id != null:
+		context.next_node_id = next_node_id
 	
 	match result.type:
 		MonologueProcessResult.TYPE.CONTINUE:
-			context.next_node_id = result.data.get("next_node_id")
+			last_result = result
 			current_logic.process.emit()
 		MonologueProcessResult.TYPE.INTERRUPT:
-			context.next_node_id = result.data.get("next_node_id")
 			await _input_next
+			last_result = result
 			current_logic.process.emit()
 		MonologueProcessResult.TYPE.EXIT:
-			current_logic.exit(context, current_node)
-			current_logic.is_processing = false
-			_active = false
+			if next_node_id != null:
+				current_logic.process.emit()
+			else:
+				current_logic.exit(context, current_node)
+				current_logic.is_processing = false
+				_active = false
+	
+	if next_node_id == null:
+		_active = false
+		
 
 
 func get_node_from_id(node_id: String) -> Dictionary:

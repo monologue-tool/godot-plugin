@@ -1,7 +1,7 @@
-extends MonologueProcessLogic
+class_name MonologueRandomLogic extends MonologueProcessLogic
 
 
-func enter(_ctx: MonologueContext, node: Dictionary) -> MonologueProcessResult:
+func enter(_ctx: MonologueContext, node: Dictionary, _data: Dictionary = {}) -> MonologueProcessResult:
 	var outputs: Array = node.get("Outputs", [])
 	var random_number: int = randi_range(0, 100)
 	var cumulative_weight: int = 0

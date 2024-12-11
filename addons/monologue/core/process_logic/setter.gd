@@ -1,7 +1,7 @@
-extends MonologueProcessLogic
+class_name MonologueSetterLogic extends MonologueProcessLogic
 
 
-func enter(ctx: MonologueContext, node: Dictionary) -> MonologueProcessResult:
+func enter(ctx: MonologueContext, node: Dictionary, _data: Dictionary = {}) -> MonologueProcessResult:
 	var set_type: String = node.get("SetType")
 	
 	match set_type:
