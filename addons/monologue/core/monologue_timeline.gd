@@ -1,4 +1,10 @@
 class_name MonologueTimeline extends Node
+## A node for interpreting a Monologue file.
+##
+## The [MonologueTimeline] node is responsible for interpreting and processing a specific dialogue timeline defined in a JSON file.[br]
+## It manages the sequence of dialogue nodes, resource loading, and progression through the dialogue.[br]
+## [br]
+## We advise you not to instantiate it yourself, but to use a [MonologueProcess] node instead.
 
 # Signals to track node and option states
 signal timeline_ended
@@ -23,6 +29,7 @@ var options: Dictionary = {}
 
 # UI component references
 var text_box: MonologueTextBox
+var text_box_container: Control
 var choice_selector
 var settings: MonologueProcessSettings
 
@@ -52,6 +59,7 @@ var current_logic: MonologueProcessLogic = null
 var current_node: Dictionary = {}
 var last_result: MonologueProcessResult
 var _active: bool = false
+var text_box_container_mouse_hovering: bool = false
 
 # Static method to load a timeline from a file
 static func load(path: String) -> MonologueTimeline:
@@ -91,6 +99,7 @@ func _load_from_dict(dict: Dictionary) -> void:
 	print("[Monologue] Loaded %s audio files" % audios.size())
 	print("[Monologue] Loaded %s voicelines" % voicelines.size())
 
+
 # Load resources for a specific node type
 func _load_resources(res_manager: MonologueResourceManager, node_type: String, property_name: String) -> void:
 	for node in get_nodes_from_type(node_type):
@@ -105,6 +114,10 @@ func process(from_node_id: String = root_node_id) -> void:
 	context.timeline = self
 	context.settings = settings
 	context.next_node_id = from_node_id
+	
+	if text_box_container:
+		text_box_container.mouse_entered.connect(_on_text_box_container_mouse_entered)
+		text_box_container.mouse_exited.connect(_on_text_box_container_mouse_exited)
 	
 	_active = true
 	while _active:
@@ -178,6 +191,11 @@ func _process(delta: float) -> void:
 		
 		var process_result: MonologueProcessResult = logic_node.active_update(context, node)
 		compute_process_result(process_result)
+	
+	# Inputs
+	if Input.is_action_just_pressed("ui_continue") or \
+	(Input.is_action_just_pressed("ui_mouse_continue") and text_box_container_mouse_hovering):
+		_input_next.emit()
 
 
 func compute_process_result(result: MonologueProcessResult) -> void:
@@ -235,14 +253,13 @@ func get_nodes_from_type(type: String) -> Array:
 	return result
 
 
-func _unhandled_input(event: InputEvent) -> void:
-	if Input.is_action_just_pressed("ui_continue"):
-		_input_next.emit()
-
-
 func _get_correct_path(path: String) -> String:
 	return base_path.path_join(path).simplify_path()
 
 
 func create_timer(time_sec: float, process_always: bool = true, process_in_physics: bool = false, ignore_time_scale: bool = false) -> SceneTreeTimer:
 	return get_tree().create_timer(time_sec, process_always, process_in_physics, ignore_time_scale)
+
+
+func _on_text_box_container_mouse_entered() -> void: text_box_container_mouse_hovering = true
+func _on_text_box_container_mouse_exited() -> void: text_box_container_mouse_hovering = false

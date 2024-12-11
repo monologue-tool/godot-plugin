@@ -1,5 +1,9 @@
 @tool
 class_name MonologueProcessSettings extends Node
+## Node for configuring [MonologueProcess].
+##
+## [MonologueProcessSettings] is a configuration node for the Monologue dialogue system, providing
+## comprehensive settings to customize dialogue behavior, text display, auto-forward mode, and audio handling.
 
 
 @export var language: String = "English"

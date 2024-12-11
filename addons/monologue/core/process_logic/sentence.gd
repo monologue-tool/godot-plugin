@@ -10,7 +10,8 @@ func enter(ctx: MonologueContext, node: Dictionary, _data: Dictionary = {}) -> M
 
 
 func update(ctx: MonologueContext, node: Dictionary, _delta: float) -> MonologueProcessResult:
-	if Input.is_action_just_pressed("ui_continue"):
+	if Input.is_action_just_pressed("ui_continue") or \
+	(Input.is_action_just_pressed("ui_mouse_continue") and ctx.timeline.text_box_container_mouse_hovering):
 		if ctx.timeline.text_box.visible_ratio < 1:
 			ctx.timeline.text_box.force_display()
 	return MonologueProcessResult.none()

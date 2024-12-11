@@ -29,17 +29,17 @@ stretch_mode = 6
 [node name="CharacterDisplayer" parent="." instance=ExtResource("2_oy43g")]
 
 [node name="TextBox" parent="." instance=ExtResource("1_62y8m")]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 offset_top = -200.0
 grow_vertical = 0
 
-[node name="MonologueProcess" type="Node" parent="." node_paths=PackedStringArray("settings", "text_box", "text_box_container", "choice_selector", "background")]
+[node name="MonologueProcess" type="Node" parent="." node_paths=PackedStringArray("settings", "text_box", "choice_selector", "background")]
 script = ExtResource("4_ibd75")
 settings = NodePath("MonologueProcessSettings")
 text_box = NodePath("../TextBox/MarginContainer/VBoxContainer/MonologueTextBox")
-text_box_container = NodePath("../TextBox")
 choice_selector = NodePath("../TextBox/MarginContainer/VBoxContainer/ChoiceSelector")
 background = NodePath("../Background")
 
