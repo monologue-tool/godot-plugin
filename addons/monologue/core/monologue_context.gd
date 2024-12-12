@@ -13,6 +13,8 @@ var options: Dictionary :
 	get: return timeline.options
 var variables: Dictionary :
 	get: return timeline.variables
+var audios: MonologueResourceManager :
+	get: return timeline.audios
 
 
 func get_next_node() -> Dictionary:

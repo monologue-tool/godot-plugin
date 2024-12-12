@@ -32,7 +32,7 @@ stretch_mode = 6
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
-offset_top = -200.0
+offset_top = -225.0
 grow_vertical = 0
 
 [node name="MonologueProcess" type="Node" parent="." node_paths=PackedStringArray("settings", "text_box", "text_box_container", "choice_selector", "background")]
