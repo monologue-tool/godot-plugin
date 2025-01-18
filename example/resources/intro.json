@@ -22,7 +22,7 @@
 			"Speaker": "",
 			"DisplayName": "",
 			"DisplayVariant": "",
-			"Sentence": "Le frigo est plein. Des aliments parfaitement rangés.",
+			"Sentence": "The fridge is full. Food perfectly arranged.",
 			"Voiceline": "",
 			"EditorPosition": {
 				"x": 2460,
@@ -36,7 +36,7 @@
 			"Speaker": "",
 			"DisplayName": "",
 			"DisplayVariant": "",
-			"Sentence": "Il me fait son signe de tête habituel.",
+			"Sentence": "He gives me his usual nod.",
 			"Voiceline": "",
 			"EditorPosition": {
 				"x": 4620,
@@ -50,7 +50,7 @@
 			"Speaker": "",
 			"DisplayName": "",
 			"DisplayVariant": "",
-			"Sentence": "Je m'approche du kiosque. Les gros titres... ils semblent flou. Je n'ai peut-être pas assez dormis.",
+			"Sentence": "I approach the kiosk. The headlines... they seem blurry. Maybe I didn't get enough sleep.",
 			"Voiceline": "",
 			"EditorPosition": {
 				"x": 4620,
@@ -76,7 +76,7 @@
 			"$type": "NodeOption",
 			"ID": "GzZt8XX9PG",
 			"NextID": "BHtC8XPuAO",
-			"Option": "Rester au lit encore 5 minutes",
+			"Option": "Stay in bed for another 5 minutes",
 			"EnableByDefault": true,
 			"OneShot": true,
 			"EditorPosition": {
@@ -88,7 +88,7 @@
 			"$type": "NodeOption",
 			"ID": "WANiOaxPPj",
 			"NextID": "YOR7Or05UB",
-			"Option": "Se lever immédiatement",
+			"Option": "Get up immediately",
 			"EnableByDefault": true,
 			"OneShot": false,
 			"EditorPosition": {
@@ -100,7 +100,7 @@
 			"$type": "NodeOption",
 			"ID": "byQ79tFs86",
 			"NextID": "ET0i1knsbP",
-			"Option": "Éteindre la radio",
+			"Option": "Turn off the radio",
 			"EnableByDefault": true,
 			"OneShot": true,
 			"EditorPosition": {
@@ -112,7 +112,7 @@
 			"$type": "NodeOption",
 			"ID": "sHj28PPSPj",
 			"NextID": "YOR7Or05UB",
-			"Option": "Se lever",
+			"Option": "See liver",
 			"EnableByDefault": false,
 			"OneShot": false,
 			"EditorPosition": {
@@ -127,7 +127,7 @@
 			"Speaker": "",
 			"DisplayName": "",
 			"DisplayVariant": "",
-			"Sentence": "Après avoir enfilé mes chaussons, la routine du matin commence.",
+			"Sentence": "After putting on my slippers, the morning routine begins.",
 			"Voiceline": "",
 			"EditorPosition": {
 				"x": 1200,
@@ -141,7 +141,7 @@
 			"Speaker": "",
 			"DisplayName": "",
 			"DisplayVariant": "",
-			"Sentence": "[i]Dans la Cuisine[/i]\n\nLe grille-pain fait encore des siennes. La tartine est à moitié brûlée.",
+			"Sentence": "[i]In the Kitchen[/i]\n\nThe toaster is acting up again. The toast is half burnt.",
 			"Voiceline": "",
 			"EditorPosition": {
 				"x": 1650,
@@ -165,7 +165,7 @@
 			"$type": "NodeOption",
 			"ID": "XarRF5ODMb",
 			"NextID": "J7zFMyNovI",
-			"Option": "L'ignorer comme d'habitude",
+			"Option": "Ignore him as usual",
 			"EnableByDefault": true,
 			"OneShot": false,
 			"EditorPosition": {
@@ -177,7 +177,7 @@
 			"$type": "NodeOption",
 			"ID": "MU6Yrh1YDH",
 			"NextID": "di2az13qmZ",
-			"Option": "Acheter un journal pour une fois",
+			"Option": "Buy a newspaper for once",
 			"EnableByDefault": true,
 			"OneShot": false,
 			"EditorPosition": {
@@ -192,7 +192,7 @@
 			"Speaker": "",
 			"DisplayName": "",
 			"DisplayVariant": "",
-			"Sentence": "Vous plongez dans le reflet de votre tasse de café qui vous renvoie une image troublée. Le sommeil vous fuit depuis près de deux semaines maintenant. Les nuits ne sont pas pénibles, non, mais elles ont perdu leur caractère réparateur. Les rêves aussi se sont évaporés. Est-ce le travail ? La famille ? Ou simplement une mauvaise passe ?",
+			"Sentence": "You look into the reflection of your coffee cup, which reflects a troubled image back to you. Sleep has been eluding you for almost two weeks now. The nights are not painful, no, but they have lost their restorative character. Dreams have also evaporated. Is it work? Family? Or just a bad patch?",
 			"Voiceline": "",
 			"EditorPosition": {
 				"x": 2910,
@@ -217,7 +217,7 @@
 			"$type": "NodeOption",
 			"ID": "UgHOcEE6ut",
 			"NextID": "dbKbZZs0tj",
-			"Option": "Manger la tartine brûlée",
+			"Option": "Eat burnt toast",
 			"EnableByDefault": true,
 			"OneShot": false,
 			"EditorPosition": {
@@ -229,7 +229,7 @@
 			"$type": "NodeOption",
 			"ID": "MEIDPVeiKM",
 			"NextID": "9JdbArDUC5",
-			"Option": "Chercher autre chose dans le frigo",
+			"Option": "Look for something else in the fridge",
 			"EnableByDefault": true,
 			"OneShot": false,
 			"EditorPosition": {
@@ -241,7 +241,7 @@
 			"$type": "NodeOption",
 			"ID": "5PbNNbBtPj",
 			"NextID": "Sj8DtwxYGq",
-			"Option": "Ne pas manger.",
+			"Option": "Do not eat.",
 			"EnableByDefault": true,
 			"OneShot": false,
 			"EditorPosition": {
@@ -256,7 +256,7 @@
 			"Speaker": "",
 			"DisplayName": "",
 			"DisplayVariant": "",
-			"Sentence": "Cette brève introspection s'évanouit soudain, laissant place à la réalité de cette journée particulière. Aujourd'hui est le grand jour : vous allez enfin devenir explorateur.",
+			"Sentence": "This brief introspection suddenly fades away, giving way to the reality of this particular day. Today is the big day: you will finally become an explorer.",
 			"Voiceline": "",
 			"EditorPosition": {
 				"x": 3360,
@@ -270,7 +270,7 @@
 			"Speaker": "",
 			"DisplayName": "",
 			"DisplayVariant": "",
-			"Sentence": "[i]Sur le chemin du travail[/i]\n\nLe vendeur de journaux est à son coin habituel.",
+			"Sentence": "[i]On the way to work[/i]\n\nThe newspaper vendor is at his usual spot.",
 			"Voiceline": "",
 			"EditorPosition": {
 				"x": 3810,
@@ -294,7 +294,7 @@
 			"$type": "NodeOption",
 			"ID": "kqUVahRr5n",
 			"NextID": "ZarjAkFpsw",
-			"Option": "Descendre du métro",
+			"Option": "Getting off the subway",
 			"EnableByDefault": true,
 			"OneShot": false,
 			"EditorPosition": {
@@ -306,7 +306,7 @@
 			"$type": "NodeOption",
 			"ID": "vKLtI1GRip",
 			"NextID": "8kUbCbZpKh",
-			"Option": "Attendre",
+			"Option": "To wait for",
 			"EnableByDefault": true,
 			"OneShot": false,
 			"EditorPosition": {
@@ -362,7 +362,7 @@
 			"$type": "NodeOption",
 			"ID": "rdOxd8cgyX",
 			"NextID": "LgkHxBDl61",
-			"Option": "Où suis-je ?",
+			"Option": "Where am I?",
 			"EnableByDefault": true,
 			"OneShot": false,
 			"EditorPosition": {
@@ -374,7 +374,7 @@
 			"$type": "NodeOption",
 			"ID": "ZMpXfi5vbP",
 			"NextID": "z2c0Azuial",
-			"Option": "Qui est-ce ?",
+			"Option": "Who is it ?",
 			"EnableByDefault": true,
 			"OneShot": false,
 			"EditorPosition": {
@@ -386,7 +386,7 @@
 			"$type": "NodeOption",
 			"ID": "Xf5h6LxItw",
 			"NextID": "YHbX3dg0rg",
-			"Option": " ...",
+			"Option": null,
 			"EnableByDefault": true,
 			"OneShot": false,
 			"EditorPosition": {
@@ -406,15 +406,6 @@
 			"EditorPosition": {
 				"x": 1290,
 				"y": 1470
-			}
-		},
-		{
-			"$type": "NodeRoot",
-			"ID": "KuF40hizq3",
-			"NextID": "KMAWkxjVoh",
-			"EditorPosition": {
-				"x": 0,
-				"y": 0
 			}
 		},
 		{
@@ -449,25 +440,11 @@
 			"Speaker": "",
 			"DisplayName": "",
 			"DisplayVariant": "",
-			"Sentence": "Encore quelques minutes sous la couette, à écouter la radio en fond. La musique, les infos, la météo, les embouteillages habituels.",
+			"Sentence": "A few more minutes under the covers, listening to the radio in the background. The music, the news, the weather, the usual traffic jams.",
 			"Voiceline": "",
 			"EditorPosition": {
 				"x": 1560,
 				"y": -210
-			}
-		},
-		{
-			"$type": "NodeSentence",
-			"ID": "KMAWkxjVoh",
-			"NextID": "AH2tSd8vzH",
-			"Speaker": "",
-			"DisplayName": "",
-			"DisplayVariant": "",
-			"Sentence": "[i]6:30 - Le réveil sonne[/i]\n\nL'odeur du café monte déjà de la cuisine. La radio grésille doucement - toujours les mêmes chansons à la même heure.",
-			"Voiceline": "",
-			"EditorPosition": {
-				"x": 390,
-				"y": 0
 			}
 		},
 		{
@@ -477,7 +454,7 @@
 			"Speaker": 1,
 			"DisplayName": "",
 			"DisplayVariant": "",
-			"Sentence": "N'est-ce pas votre propre ombre qui s'étend, plus vaste à mesure que vous poursuivez la lumière ? Ce que vous rejetez dans l'obscurité ne disparaît pas ; cela vous observe, cela s'amplifie. À force de chercher à devenir entier, vous vous fragmentez. Acceptez l'imperfection non pas comme un défaut, mais comme une invitation à danser avec ce que vous fuyez. Car ce n'est pas la lumière qui éclaire la vérité, mais la rencontre de l'ombre et du jour dans un équilibre fragile.",
+			"Sentence": "Is it not your own shadow that expands, larger as you pursue the light? What you cast into the darkness does not disappear; it watches you, it amplifies. In seeking to become whole, you fragment yourself. Accept imperfection not as a defect, but as an invitation to dance with what you are fleeing. For it is not light that illuminates the truth, but the meeting of shadow and day in a fragile balance.",
 			"Voiceline": "",
 			"EditorPosition": {
 				"x": 1740,
@@ -491,7 +468,7 @@
 			"Speaker": "",
 			"DisplayName": "",
 			"DisplayVariant": "",
-			"Sentence": "Les mots s'échappent, trahissant votre désorientation. \"Je suis perdu...\"",
+			"Sentence": "The words slip out, betraying your disorientation. \"I'm lost...\"",
 			"Voiceline": "",
 			"EditorPosition": {
 				"x": 1290,
@@ -505,7 +482,7 @@
 			"Speaker": 1,
 			"DisplayName": "",
 			"DisplayVariant": "",
-			"Sentence": "Qu'avez-vous vu ?",
+			"Sentence": "What did you see?",
 			"Voiceline": "",
 			"EditorPosition": {
 				"x": 1290,
@@ -588,7 +565,7 @@
 			"Speaker": "",
 			"DisplayName": "",
 			"DisplayVariant": "",
-			"Sentence": "Le goût est... désagréable, je n'ai pas le sentiment d'avoir manger mais je n'avais pas tellement faim.",
+			"Sentence": "The taste is... unpleasant, I don't feel like I've eaten but I wasn't that hungry.",
 			"Voiceline": "",
 			"EditorPosition": {
 				"x": 2460,
@@ -602,7 +579,7 @@
 			"Speaker": "",
 			"DisplayName": "",
 			"DisplayVariant": "",
-			"Sentence": "De toute façon je n'ai pas très faim, mon estomac ne gronde pas.",
+			"Sentence": "Anyway, I'm not very hungry, my stomach isn't growling.",
 			"Voiceline": "",
 			"EditorPosition": {
 				"x": 2460,
@@ -616,7 +593,7 @@
 			"Speaker": 1,
 			"DisplayName": "",
 			"DisplayVariant": "",
-			"Sentence": "Apprenez à regarder chaques facettes de votre personnalité.",
+			"Sentence": "Learn to look at every facet of your personality.",
 			"Voiceline": "",
 			"EditorPosition": {
 				"x": 2190,
@@ -630,7 +607,7 @@
 			"Speaker": "",
 			"DisplayName": "",
 			"DisplayVariant": "",
-			"Sentence": "Vous entendez cette phrase comme une sorte de révélation. Vous regardez le monolithe et vous vous sentez voyager.",
+			"Sentence": "You hear this sentence as a kind of revelation. You look at the monolith and you feel yourself traveling.",
 			"Voiceline": "",
 			"EditorPosition": {
 				"x": 2640,
@@ -644,7 +621,7 @@
 			"Speaker": "",
 			"DisplayName": "",
 			"DisplayVariant": "",
-			"Sentence": "Vous êtes assis. Ou debout ? C'est difficile à dire. Face à vous, une présence. Pas vraiment une forme, plutôt une suggestion de présence.",
+			"Sentence": "You are sitting. Or standing? It is hard to tell. In front of you, a presence. Not really a shape, more a suggestion of presence.",
 			"Voiceline": "",
 			"EditorPosition": {
 				"x": 480,
@@ -658,7 +635,7 @@
 			"Speaker": "",
 			"DisplayName": "",
 			"DisplayVariant": "",
-			"Sentence": "Les portes du métro se referment devant vous, vous voyez la station s'éffacer à mesure que le métro prend de la vitesse, vous reprenez vos esprits. Ce jour là vous n'irais pas au travail et vous ne serez jamais un explorateur.",
+			"Sentence": "The subway doors close in front of you, you see the station fade away as the subway picks up speed, you come to your senses. That day you would not go to work and you will never be an explorer.",
 			"Voiceline": "",
 			"EditorPosition": {
 				"x": 5880,
@@ -672,7 +649,7 @@
 			"Speaker": "",
 			"DisplayName": "",
 			"DisplayVariant": "",
-			"Sentence": "Vous descendez du métro, votre cœur bat fort, vous stressez, les gens vous bousculent, les murs du couloir semblent perdre leur substance, comme de la peinture qui se dilue. Les bruits de la station s'estompent progressivement, remplacés par un silence cotonneux. Les détails familiers s'effacent un à un. Le carrelage sous vos pieds, les publicités sur les murs, les autres voyageurs - tout se fond dans une blancheur grandissante. Seul le chemin devant vous reste défini, comme une invitation. Vos pas résonnent désormais dans un espace qui semble infini. Le blanc a tout envahi, sauf... cette forme qui se dresse devant vous. Une structure sombre, géométrique, imposante.\n\n[b]Un monolithe.[/b]",
+			"Sentence": "You get off the subway, your heart is beating fast, you are stressed, people are jostling you, the walls of the corridor seem to lose their substance, like paint that is diluting. The noises of the station gradually fade, replaced by a cottony silence. Familiar details disappear one by one. The tiles under your feet, the advertisements on the walls, the other travelers - everything blends into a growing whiteness. Only the path in front of you remains defined, like an invitation. Your steps now echo in a space that seems infinite. White has invaded everything, except... this shape that stands before you. A dark, geometric, imposing structure.\n\n[b]A monolith.[/b]",
 			"Voiceline": "",
 			"EditorPosition": {
 				"x": 5880,
@@ -686,7 +663,7 @@
 			"Speaker": "",
 			"DisplayName": "",
 			"DisplayVariant": "",
-			"Sentence": "Vous prenez le métro et une étrange sensation s'emparre de vous. Ce n'est pas la foule habituelle, non, c'est autre chose. Comme si chaque station vous éloignait un peu plus de quelque chose. Le métro s'arrête entre deux stations. Les lumières vacillent un instant. Dans l'obscurité passagère, vous apercevez quelque chose par la fenêtre. Une lueur ? Un reflet ? Non, c'était autre chose. Quelque chose qui n'aurait pas dû être là.\n\nLa rame s'arrête à votre station.",
+			"Sentence": "You take the subway and a strange feeling takes hold of you. It's not the usual crowd, no, it's something else. As if each station takes you a little further away from something. The subway stops between two stations. The lights flicker for a moment. In the passing darkness, you see something through the window. A glow? A reflection? No, it was something else. Something that shouldn't have been there.\n\nThe train stops at your station.",
 			"Voiceline": "",
 			"EditorPosition": {
 				"x": 5081,
@@ -700,7 +677,7 @@
 			"Speaker": "",
 			"DisplayName": "",
 			"DisplayVariant": "",
-			"Sentence": "Encore quelques minutes sous la couette, à entendre les voitures passer dans la rue.",
+			"Sentence": "A few more minutes under the covers, listening to the cars passing in the street.",
 			"Voiceline": "",
 			"EditorPosition": {
 				"x": 1560,
@@ -723,7 +700,7 @@
 			"Speaker": "",
 			"DisplayName": "",
 			"DisplayVariant": "",
-			"Sentence": "Je tends la main vers la radio et l'éteint. L'instant d'après j'oublie quelle musique passait.",
+			"Sentence": "I reach for the radio and turn it off. The next moment I forget what music was playing.",
 			"Voiceline": "",
 			"EditorPosition": {
 				"x": 480,
@@ -740,6 +717,42 @@
 			"EditorPosition": {
 				"x": 90,
 				"y": 810
+			}
+		},
+		{
+			"$type": "NodeSentence",
+			"ID": "KMAWkxjVoh",
+			"NextID": "AH2tSd8vzH",
+			"Speaker": "",
+			"DisplayName": "",
+			"DisplayVariant": "",
+			"Sentence": "[i]6:30 - The alarm rings[/i]\n\nThe smell of coffee is already rising from the kitchen. The radio crackles softly - always the same songs at the same time.",
+			"Voiceline": "",
+			"EditorPosition": {
+				"x": 390,
+				"y": 0
+			}
+		},
+		{
+			"$type": "NodeRoot",
+			"ID": "KuF40hizq3",
+			"NextID": "J1FGCBXFaR",
+			"EditorPosition": {
+				"x": -480,
+				"y": 0
+			}
+		},
+		{
+			"$type": "NodeAudio",
+			"ID": "J1FGCBXFaR",
+			"NextID": "KMAWkxjVoh",
+			"Loop": true,
+			"Volume": "",
+			"Pitch": "",
+			"Audio": "../assets/musics/One for Wendy.mp3",
+			"EditorPosition": {
+				"x": -90,
+				"y": 0
 			}
 		}
 	],
