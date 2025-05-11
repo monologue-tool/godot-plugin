@@ -3,6 +3,8 @@ class_name MonologueProcessLogic extends Node
 
 signal process
 
+@export var clear_text_box: bool = true
+
 var is_processing: bool = false
 
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bwt4chmtoqxcp"]
 
-[ext_resource type="Script" path="res://example/scenes/common/choice_selector/choice_selector.gd" id="1"]
+[ext_resource type="Script" uid="uid://ddrsihbsup3tu" path="res://example/scenes/common/choice_selector/choice_selector.gd" id="1"]
 
 [node name="ChoiceSelector" type="VBoxContainer"]
 anchors_preset = 15

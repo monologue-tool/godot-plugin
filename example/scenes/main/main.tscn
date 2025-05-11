@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://42m7batmpdut"]
+[gd_scene load_steps=7 format=3 uid="uid://42m7batmpdut"]
 
 [ext_resource type="PackedScene" uid="uid://byobrgy5is3f4" path="res://example/scenes/common/text_box/text_box.tscn" id="1_62y8m"]
-[ext_resource type="Script" path="res://example/scenes/main/main.gd" id="1_bcq87"]
+[ext_resource type="Script" uid="uid://c2bvfk1l31nwj" path="res://example/scenes/main/main.gd" id="1_bcq87"]
 [ext_resource type="PackedScene" uid="uid://bowhgj32i7bue" path="res://example/scenes/common/character_displayer/character_displayer.tscn" id="2_oy43g"]
-[ext_resource type="Script" path="res://addons/monologue/core/monologue_process.gd" id="4_ibd75"]
-[ext_resource type="Script" path="res://addons/monologue/core/monologue_process_settings.gd" id="5_es2q8"]
+[ext_resource type="PackedScene" uid="uid://bwt4chmtoqxcp" path="res://example/scenes/common/choice_selector/choice_selector.tscn" id="3_5jfna"]
+[ext_resource type="Script" uid="uid://yjc4b6p8bg0q" path="res://addons/monologue/core/monologue_process.gd" id="4_ibd75"]
+[ext_resource type="Script" uid="uid://dd766rndd07e3" path="res://addons/monologue/core/monologue_process_settings.gd" id="5_es2q8"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -32,15 +33,31 @@ stretch_mode = 6
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
-offset_top = -225.0
+offset_top = -233.0
 grow_vertical = 0
+
+[node name="MonologueTextBox" parent="TextBox/MarginContainer/VBoxContainer" index="0"]
+scroll_active = false
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ChoiceSelector" parent="CenterContainer" instance=ExtResource("3_5jfna")]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_vertical = 3
 
 [node name="MonologueProcess" type="Node" parent="." node_paths=PackedStringArray("settings", "text_box", "text_box_container", "choice_selector", "background")]
 script = ExtResource("4_ibd75")
 settings = NodePath("MonologueProcessSettings")
 text_box = NodePath("../TextBox/MarginContainer/VBoxContainer/MonologueTextBox")
 text_box_container = NodePath("../TextBox")
-choice_selector = NodePath("../TextBox/MarginContainer/VBoxContainer/ChoiceSelector")
+choice_selector = NodePath("../CenterContainer/ChoiceSelector")
 background = NodePath("../Background")
 
 [node name="MonologueProcessSettings" type="Node" parent="MonologueProcess"]

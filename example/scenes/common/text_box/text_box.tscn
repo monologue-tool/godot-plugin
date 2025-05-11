@@ -1,8 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://byobrgy5is3f4"]
+[gd_scene load_steps=9 format=3 uid="uid://byobrgy5is3f4"]
 
 [ext_resource type="Theme" uid="uid://cdo7e18gp5hgn" path="res://example/theme/theme.tres" id="1_blgbs"]
-[ext_resource type="PackedScene" uid="uid://bwt4chmtoqxcp" path="res://example/scenes/common/choice_selector/choice_selector.tscn" id="1_u1kfa"]
-[ext_resource type="Script" path="res://addons/monologue/layout/monologue_text_box.gd" id="2_ixdde"]
+[ext_resource type="Script" uid="uid://b4iofykiotorx" path="res://addons/monologue/layout/monologue_text_box.gd" id="2_ixdde"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ws5cw"]
 bg_color = Color(0.176, 0.176, 0.176, 0.5)
@@ -96,9 +95,9 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wkikl"]
 _data = {
-"fade_in": SubResource("1"),
-"fade_out": SubResource("2"),
-"setup": SubResource("3")
+&"fade_in": SubResource("1"),
+&"fade_out": SubResource("2"),
+&"setup": SubResource("3")
 }
 
 [node name="TextBox" type="PanelContainer"]
@@ -152,13 +151,8 @@ script = ExtResource("2_ixdde")
 speaker_container = NodePath("../../../Control/PanelContainer")
 speaker_label = NodePath("../../../Control/PanelContainer/Label")
 
-[node name="ChoiceSelector" parent="MarginContainer/VBoxContainer" instance=ExtResource("1_u1kfa")]
-visible = false
-layout_mode = 2
-size_flags_vertical = 3
-
 [node name="FadeAnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_wkikl")
+&"": SubResource("AnimationLibrary_wkikl")
 }
 autoplay = "setup"

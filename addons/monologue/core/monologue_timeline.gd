@@ -125,7 +125,7 @@ func process(from_node_id: String = root_node_id) -> void:
 		text_box.show()
 		
 		current_node = context.get_node_from_id(context.next_node_id)
-		var node_type = current_node.get("$type")
+		var node_type: String = current_node.get("$type")
 		
 		# Select logic handler based on node type
 		current_logic = _get_logic_for_node_type(node_type)
@@ -147,7 +147,10 @@ func process(from_node_id: String = root_node_id) -> void:
 		current_logic.exit(context, current_node)
 		current_logic.is_processing = false
 		
-		text_box.clear()
+		var next_node_type: String = context.get_node_from_id(context.next_node_id).get("$type")
+		var next_logic: MonologueProcessLogic = _get_logic_for_node_type(next_node_type)
+		if next_logic.clear_text_box:
+			text_box.clear()
 		
 		# Ensure proper update
 		process_mode = PROCESS_MODE_DISABLED
@@ -195,7 +198,7 @@ func _process(delta: float) -> void:
 	# Inputs
 	if Input.is_action_just_pressed("ui_continue") or \
 	(Input.is_action_just_pressed("ui_mouse_continue") and text_box_container_mouse_hovering):
-		_input_next.emit()
+		_input_next.emit()	
 
 
 func compute_process_result(result: MonologueProcessResult) -> void:

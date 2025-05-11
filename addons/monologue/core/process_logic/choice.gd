@@ -1,8 +1,11 @@
 class_name MonologueChoiceLogic extends MonologueProcessLogic
 
 
+func _ready() -> void:
+	clear_text_box = false
+
+
 func enter(ctx: MonologueContext, node: Dictionary, _data: Dictionary = {}) -> MonologueProcessResult:
-	ctx.timeline.text_box.hide()
 	for opt_id in node.get("OptionsID"):
 		var option_node = ctx.options.get(opt_id)
 		if not option_node["Enable"]:

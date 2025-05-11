@@ -26,7 +26,6 @@ class_name MonologueProcess extends Node
 
 signal state_changed(new_state: States)
 
-
 signal timeline_started
 
 signal timeline_ended
