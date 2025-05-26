@@ -7,10 +7,10 @@ var theme_ref := preload("res://example/theme/theme.tres")
 var last_option: Dictionary
 
 
-func display_option(option: Dictionary) -> void:
+func display_option(option: Dictionary, language: String = "English") -> void:
 	show()
 	var button := Button.new()
-	button.text = option.get("Option")
+	button.text = option.get("Option", {}).get(language, "")
 	button.theme = theme_ref
 	button.connect("pressed", _on_button_pressed.bind(option))
 	add_child(button)

@@ -25,18 +25,23 @@ var voicelines := MonologueResourceManager.new()
 
 # Timeline variables and options
 var variables: Dictionary = {}
+var characters: Array = []
 var options: Dictionary = {}
 
 # UI component references
 var text_box: MonologueTextBox
 var text_box_container: Control
-var choice_selector
+var choice_selector: Node
+var background: TextureRect
+var character_displayer: MonologueCharacterDisplayer
 var settings: MonologueProcessSettings
 
 # Preload and instantiate logic nodes
 var Action := preload("res://addons/monologue/core/process_logic/action.gd").new()
 var Audio := preload("res://addons/monologue/core/process_logic/audio.gd").new()
 var Bridge := preload("res://addons/monologue/core/process_logic/bridge.gd").new()
+var Background := preload("res://addons/monologue/core/process_logic/background.gd").new()
+var Character := preload("res://addons/monologue/core/process_logic/character.gd").new()
 var Choice := preload("res://addons/monologue/core/process_logic/choice.gd").new()
 var Condition := preload("res://addons/monologue/core/process_logic/condition.gd").new()
 var EndPath := preload("res://addons/monologue/core/process_logic/end_path.gd").new()
@@ -80,6 +85,12 @@ func _load_from_dict(dict: Dictionary) -> void:
 	node_list = dict.get("ListNodes", [])
 	root_node_id = dict.get("RootNodeID")
 	
+	# Load characters
+	var raw_characters: Array = dict.get("Characters", [])
+	characters.resize(raw_characters.size())
+	for character in raw_characters:
+		characters[int(character.get("EditorIndex"))] = character
+	
 	# Load variables
 	for variable in dict.get("Variables", []):
 		variables[variable.get("Name")] = variable
@@ -92,7 +103,8 @@ func _load_from_dict(dict: Dictionary) -> void:
 	# Load resources
 	_load_resources(images, "NodeBackground", "Image")
 	_load_resources(audios, "NodeAudio", "Audio")
-	_load_resources(voicelines, "NodeSentence", "Voiceline")
+	_load_characters()
+	_load_voicelines()
 	
 	# Print loading statistics
 	print("[Monologue] Loaded %s images" % images.size())
@@ -107,6 +119,107 @@ func _load_resources(res_manager: MonologueResourceManager, node_type: String, p
 		if resource_path.is_empty():
 			continue
 		res_manager.load_resource(_get_correct_path(resource_path), node.get("ID"))
+
+
+func _load_characters() -> void:
+	for character in characters:
+		var character_data: Dictionary = character.get("Character")
+		var character_idx: int = int(character.get("EditorIndex", 0))
+		var portraits: Array = character_data.get("Portraits", [])
+		for portrait in portraits:
+			var portrait_name: String = portrait.get("Name", "")
+			var portrait_data: Dictionary = portrait.get("Portrait", {})
+			var portrait_type: String = portrait_data.get("PortraitType", "Image")
+			
+			if portrait_type == "Image":
+				var image_path: String = portrait_data.get("ImagePath", "")
+				if image_path.is_empty():
+					continue
+				var ressource_id: String = "%s_%s" % [character_idx, portrait_name]
+				images.load_resource(_get_correct_path(image_path), ressource_id, portrait_data)
+			elif portrait_type == "Animation":
+				var animation_data: Dictionary = portrait_data.get("Animation", {})
+				var fps: float = animation_data.get("Fps", 12.0)
+				var frame_count: int = int(animation_data.get("FrameCount", 1))
+				var layers: Array = animation_data.get("Layers", [])
+				var combined_textures: Array[Texture2D] = []
+				combined_textures.resize(frame_count)
+				
+				for i in range(frame_count):
+					var layers_im: Array[Texture2D] = []
+					for layer in layers:
+						var frame_image_path: String = _animation_get_frame(layer, i)
+						var im: CompressedTexture2D = load(_get_correct_path(frame_image_path))
+						layers_im.append(im)
+					
+					if layers_im.size() > 0:
+						combined_textures[i] = _combine_images(layers_im)
+					else:
+						combined_textures[i] = ImageTexture.create_from_image(
+							Image.create_empty(1, 1, false, Image.FORMAT_RGBA8))
+				
+				var max_size: Vector2 = _get_bounding_box(combined_textures)
+				var empty_image: ImageTexture = ImageTexture.create_from_image(
+							Image.create_empty(max_size.x, max_size.y, false, Image.FORMAT_RGBA8))
+				for texture in combined_textures:
+					_combine_images([empty_image, texture])
+				
+				var ressource_id: String = "%s_%s" % [character_idx, portrait_name]
+				var meta: Dictionary = {
+					"PortraitType": portrait_type,
+					"Fps": fps,
+					"Mirror": portrait_data.get("Mirror", false),
+					"OneShot": portrait_data.get("OneShot", false)
+				}
+				images.load_premade_resource(combined_textures, ressource_id, meta)
+
+
+func _animation_get_frame(layer_data: Dictionary, frame_idx: int) -> String:
+	var image_path: String = ""
+	var frames: Dictionary = layer_data.get("Frames", {})
+	
+	for frame_key in frames.keys():
+		var frame_data: Dictionary = frames[frame_key]
+		var frame_i: int = int(frame_key)
+		var frame_exposure: float = frame_data.get("Exposure", 1.0)-1
+		if frame_i <= frame_idx and (frame_i + frame_exposure) >= frame_idx:
+			image_path = frame_data.get("ImagePath", "")
+			break
+	
+	return image_path
+
+
+func _combine_images(textures: Array[Texture2D]) -> ImageTexture:
+	var max_size: Vector2 = _get_bounding_box(textures)
+
+	var image := Image.create(int(max_size.x), int(max_size.y), false, Image.FORMAT_RGBA8)
+	for tex: Texture2D in textures:
+		var im: Image = tex.get_image()
+		image.blend_rect(im, Rect2i(Vector2i.ZERO, im.get_size()), (Vector2i(im.get_size()) - image.get_size())/2)
+
+	var texture: ImageTexture = ImageTexture.create_from_image(image)
+	return texture
+
+
+func _get_bounding_box(textures: Array[Texture2D]) -> Vector2:
+	var bounding_box: Vector2 = textures[0].get_image().get_size()
+
+	for i in range(1, textures.size()):
+		bounding_box = bounding_box.max(textures[i].get_size())
+
+	return bounding_box
+
+
+func _load_voicelines() -> void:
+	for node in get_nodes_from_type("NodeSentence"):
+		var node_voicelines = node.get("Voiceline", "")
+		for language in node_voicelines:
+			var voiceline_path = node_voicelines.get(language, "")
+			if voiceline_path.is_empty():
+				continue
+			var ressource_id: String = "%s-%s" % [node.get("ID"), language]
+			voicelines.load_resource(_get_correct_path(voiceline_path), ressource_id)
+
 
 # Main timeline processing method
 func process(from_node_id: String = root_node_id) -> void:
@@ -168,15 +281,17 @@ func _get_logic_for_node_type(node_type: String) -> MonologueProcessLogic:
 	match node_type:
 		"NodeAction": return Action
 		"NodeAudio": return Audio
-		"NodeSentence": return Sentence
+		"NodeCharacter": return Character
 		"NodeChoice": return Choice
 		"NodeCondition": return Condition
+		"NodeBackground": return Background
 		"NodeBridgeIn", "NodeBridgeOut": return Bridge
 		"NodeEndPath": return EndPath
 		"NodeEvent": return Event
 		"NodeRandom": return Random
 		"NodeReroute": return Reroute
 		"NodeRoot": return Root
+		"NodeSentence": return Sentence
 		"NodeSetter": return Setter
 		"NodeWait": return Wait
 		_: return null

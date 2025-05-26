@@ -11,7 +11,7 @@ func enter(ctx: MonologueContext, node: Dictionary, _data: Dictionary = {}) -> M
 		if not option_node["Enable"]:
 			continue
 		
-		var option = ctx.timeline.choice_selector.display_option(option_node)
+		var option = ctx.timeline.choice_selector.display_option(option_node, ctx.settings.language)
 	
 	
 	await ctx.timeline.choice_selector.choice_made

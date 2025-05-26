@@ -21,7 +21,7 @@ class_name MonologueProcess extends Node
 @export var text_box_container: Control
 @export var choice_selector: Node
 @export var background: TextureRect
-#@export var character_displayer: Node2D
+@export var character_displayer: MonologueCharacterDisplayer
 
 
 signal state_changed(new_state: States)
@@ -47,8 +47,9 @@ func start_timeline(timeline: MonologueTimeline, skip_idx = "") -> void:
 	current_timeline.text_box = text_box
 	current_timeline.text_box_container = text_box_container
 	current_timeline.choice_selector = choice_selector
+	current_timeline.background = background
+	current_timeline.character_displayer = character_displayer
 	current_timeline.settings = settings
-	#current_timeline.background = background
 
 	add_child(current_timeline)
 	

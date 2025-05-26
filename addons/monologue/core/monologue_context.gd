@@ -13,6 +13,8 @@ var options: Dictionary :
 	get: return timeline.options
 var variables: Dictionary :
 	get: return timeline.variables
+var images: MonologueResourceManager :
+	get: return timeline.images
 var audios: MonologueResourceManager :
 	get: return timeline.audios
 
