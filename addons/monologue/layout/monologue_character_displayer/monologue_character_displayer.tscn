@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bowhgj32i7bue"]
 
-[ext_resource type="Script" uid="uid://bo63nhi42df3u" path="res://addons/monologue/layout/character_displayer/character_displayer.gd" id="1_f1qeg"]
+[ext_resource type="Script" uid="uid://bo63nhi42df3u" path="res://addons/monologue/layout/monologue_character_displayer/monologue_character_displayer.gd" id="1_65jrr"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_drs25"]
 viewport_path = NodePath("LeftSubViewport")
@@ -11,14 +11,14 @@ viewport_path = NodePath("CenterSubViewport")
 [sub_resource type="ViewportTexture" id="ViewportTexture_6ps1q"]
 viewport_path = NodePath("RightSubViewport")
 
-[node name="Control" type="Control"]
+[node name="MonologueCharacterDisplayer" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_f1qeg")
+script = ExtResource("1_65jrr")
 
 [node name="TextureLeft" type="TextureRect" parent="."]
 unique_name_in_owner = true

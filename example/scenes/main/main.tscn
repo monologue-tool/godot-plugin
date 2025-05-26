@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://byobrgy5is3f4" path="res://example/scenes/common/text_box/text_box.tscn" id="1_62y8m"]
 [ext_resource type="Script" uid="uid://c2bvfk1l31nwj" path="res://example/scenes/main/main.gd" id="1_bcq87"]
-[ext_resource type="PackedScene" uid="uid://bowhgj32i7bue" path="res://addons/monologue/layout/character_displayer/character_displayer.tscn" id="2_oy43g"]
+[ext_resource type="PackedScene" uid="uid://bowhgj32i7bue" path="res://addons/monologue/layout/monologue_character_displayer/monologue_character_displayer.tscn" id="2_oy43g"]
 [ext_resource type="PackedScene" uid="uid://bwt4chmtoqxcp" path="res://example/scenes/common/choice_selector/choice_selector.tscn" id="3_5jfna"]
 [ext_resource type="Script" uid="uid://yjc4b6p8bg0q" path="res://addons/monologue/core/monologue_process.gd" id="4_ibd75"]
 [ext_resource type="Script" uid="uid://dd766rndd07e3" path="res://addons/monologue/core/monologue_process_settings.gd" id="5_es2q8"]
