@@ -10,7 +10,14 @@ func is_fully_loaded() -> bool:
 
 
 func load_resource(resource_path: String, resource_id: Variant, meta: Dictionary = {}) -> void:
-	var res = load(resource_path)
+	var res: Variant
+	match resource_path.get_extension():
+		"mp3": res = AudioStreamMP3.load_from_file(resource_path)
+		"wav": res = AudioStreamWAV.load_from_file(resource_path)
+		"ogg": res = AudioStreamOggVorbis.load_from_file(resource_path)
+		"bmp", "dds", "ktx", "exr", "hdr", "jpg", "jpeg", "png", "tga", "svg", "webp":
+			res = ImageTexture.create_from_image(Image.load_from_file(resource_path))
+			
 	resources[resource_id] = {
 		"ressource": res,
 		"metadata": meta

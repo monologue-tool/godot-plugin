@@ -149,7 +149,8 @@ func _load_characters() -> void:
 					var layers_im: Array[Texture2D] = []
 					for layer in layers:
 						var frame_image_path: String = _animation_get_frame(layer, i)
-						var im: CompressedTexture2D = load(_get_correct_path(frame_image_path))
+						var im: ImageTexture = ImageTexture.create_from_image(
+							Image.load_from_file(_get_correct_path(frame_image_path)))
 						layers_im.append(im)
 					
 					if layers_im.size() > 0:
@@ -372,7 +373,9 @@ func get_nodes_from_type(type: String) -> Array:
 
 
 func _get_correct_path(path: String) -> String:
-	return base_path.path_join(path).simplify_path()
+	if path.is_relative_path():
+		return base_path.path_join(path).simplify_path()
+	return path.simplify_path()
 
 
 func create_timer(time_sec: float, process_always: bool = true, process_in_physics: bool = false, ignore_time_scale: bool = false) -> SceneTreeTimer:
