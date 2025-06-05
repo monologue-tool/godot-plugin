@@ -31,7 +31,7 @@ func enter(ctx: MonologueContext, node: Dictionary, _data: Dictionary = {}) -> M
 				textures = [portrait_res]
 			else:
 				textures = portrait_res
-			ctx.timeline.character_displayer.set_texture(textures, mirror, position, animation, duration, portrait_meta.get("Fps", 12.0))
+			ctx.timeline.character_displayer.set_texture(textures, character_idx, mirror, position, animation, duration, portrait_meta.get("Fps", 12.0))
 		"Leave":
 			pass
 	

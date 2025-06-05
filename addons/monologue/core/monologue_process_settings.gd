@@ -6,8 +6,41 @@ class_name MonologueProcessSettings extends Node
 ## comprehensive settings to customize dialogue behavior, text display, auto-forward mode, and audio handling.
 
 
-@export var language: String = "English"
+enum TextureFilter {
+	NEAREST=CanvasItem.TEXTURE_FILTER_NEAREST,
+	LINEAR=CanvasItem.TEXTURE_FILTER_LINEAR,
+	NEAREST_MIPMAP=CanvasItem.TEXTURE_FILTER_NEAREST_WITH_MIPMAPS,
+	LINEAR_MIPMAP=CanvasItem.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS,
+	NEAREST_MIPMAP_ANISOTROPIC=CanvasItem.TEXTURE_FILTER_NEAREST_WITH_MIPMAPS_ANISOTROPIC,
+	LINEAR_MIPMAP_ANISOTROPI=CanvasItem.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS_ANISOTROPIC
+}
 
+
+enum InterpolationType {
+	LINEAR=Tween.TRANS_LINEAR,
+	SINE=Tween.TRANS_SINE,
+	QUINT=Tween.TRANS_QUINT,
+	QUART=Tween.TRANS_QUART,
+	QUAD=Tween.TRANS_QUAD,
+	EXPO=Tween.TRANS_EXPO,
+	ELASTIC=Tween.TRANS_ELASTIC,
+	CUBIC=Tween.TRANS_CUBIC,
+	CIRC=Tween.TRANS_CIRC,
+	BOUNCE=Tween.TRANS_BOUNCE,
+	BACK=Tween.TRANS_BACK,
+	SPRING=Tween.TRANS_SPRING
+}
+
+
+enum EaseType {
+	EASE_IN=Tween.EASE_IN,
+	EASE_OUT=Tween.EASE_OUT,
+	EASE_IN_OUT=Tween.EASE_IN_OUT,
+	EASE_OUT_IN=Tween.EASE_OUT_IN,
+}
+
+
+@export var language: String = "English"
 
 @export_subgroup("text")
 
@@ -25,6 +58,20 @@ class_name MonologueProcessSettings extends Node
 @export var afm_time: int = 15
 
 
+@export_subgroup("display")
+
+## The texture filter used for textures.
+@export var texture_filter: TextureFilter = TextureFilter.LINEAR
+
+@export_subgroup("display/characters")
+## If [code]true[/code], characters are darkened when they don't speak.
+@export var highlight_speaker: bool = true
+## The interpolation type used for character transitions.
+@export var interpolation_type: InterpolationType = InterpolationType.LINEAR
+## The easing type used for character transitions.
+@export var ease_type: EaseType = EaseType.EASE_IN_OUT
+
+
 @export_subgroup("audio")
 
 @export_subgroup("audio/voice")
@@ -34,6 +81,7 @@ class_name MonologueProcessSettings extends Node
 @export var wait_voice: bool = false
 
 @export_subgroup("audio/emphasize")
+
 ## If [code]true[/code], Monologue will emphasize the audio channels found in [param emphasize_audio_bus] by reducing the volume of other channels.
 @export var emphasize_audio: bool = false:
 	set(val):

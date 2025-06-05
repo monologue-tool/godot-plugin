@@ -5,18 +5,49 @@ class_name MonologueCharacterDisplayer extends Control
 @onready var center: TextureRect = %TextureCenter
 @onready var right: TextureRect = %TextureRight
 
+var left_character_idx: int = -1
+var center_character_idx: int = -1
+var right_character_idx: int = -1
 
-func set_texture(texture: Array, mirror: bool = false,
+var transition_type: Tween.TransitionType = Tween.TRANS_LINEAR
+var ease_type: Tween.EaseType = Tween.EASE_IN_OUT
+
+
+func set_filter(filter: MonologueProcessSettings.TextureFilter) -> void:
+	left.texture_filter = filter as CanvasItem.TextureFilter
+	center.texture_filter = filter as CanvasItem.TextureFilter
+	right.texture_filter = filter as CanvasItem.TextureFilter
+
+
+func set_interpolation_type(interpolation: MonologueProcessSettings.InterpolationType) -> void:
+	transition_type = interpolation as Tween.TransitionType
+
+
+func set_ease_type(ease: MonologueProcessSettings.EaseType) -> void:
+	ease_type = ease as Tween.EaseType
+
+
+func set_texture(texture: Array, character_idx: int, mirror: bool = false,
 				 slot_pos: String = "Left", animation_name: String = "None",
 				 duration: float = 0.5, fps: float = 12.0) -> void:
 	var slot: TextureRect = _get_slot(slot_pos)
 	slot.flip_h = mirror
 	_set_animated_texture(texture, slot_pos, fps)
+	_set_character_idx(slot_pos, character_idx)
 	
 	run_animation(slot_pos, animation_name, duration)
 
 
-func _set_animated_texture(textures: Array , slot_pos: String = "Left", fps: float = 12.0) -> void:
+func focus_slot(slot_pos: String) -> void:
+	for slot: TextureRect in [left, center, right]:
+		slot.modulate.v = 0.5
+	
+	var focus_slot: TextureRect = _get_slot(slot_pos)
+	if focus_slot:
+		focus_slot.modulate.v = 1.0
+
+
+func _set_animated_texture(textures: Array, slot_pos: String = "Left", fps: float = 12.0) -> void:
 	var as_slot: AnimatedSprite2D = _get_slot_animated_sprite(slot_pos)
 	var sv_slot: SubViewport = _get_slot_subviewport(slot_pos)
 	var sprite_frames: SpriteFrames = SpriteFrames.new()
@@ -77,7 +108,7 @@ func run_animation(slot_pos: String = "Left", animation_name: String = "None",
 
 func _animation_fade_in(slot_pos: String = "Left", duration: float = 0.5) -> void:
 	var slot: TextureRect = _get_slot(slot_pos)
-	var tween: Tween = create_tween()
+	var tween: Tween = invoke_tween()
 	
 	slot.modulate.a = 0
 	await tween.tween_property(slot, "modulate:a", 1.0, duration)
@@ -85,7 +116,7 @@ func _animation_fade_in(slot_pos: String = "Left", duration: float = 0.5) -> voi
 
 func _animation_fade_out(slot_pos: String = "Left", duration: float = 0.5) -> void:
 	var slot: TextureRect = _get_slot(slot_pos)
-	var tween: Tween = create_tween()
+	var tween: Tween = invoke_tween()
 	
 	slot.modulate.a = 1.0
 	await tween.tween_property(slot, "modulate:a", 0.0, duration)
@@ -93,7 +124,7 @@ func _animation_fade_out(slot_pos: String = "Left", duration: float = 0.5) -> vo
 
 func _animation_slide_in_down(slot_pos: String = "Left", duration: float = 0.5) -> void:
 	var slot: TextureRect = _get_slot(slot_pos)
-	var tween: Tween = create_tween()
+	var tween: Tween = invoke_tween()
 	var slot_position: Vector2 = slot.position
 	slot.set_global_position(Vector2(slot_position.x, size.y))
 	
@@ -102,7 +133,7 @@ func _animation_slide_in_down(slot_pos: String = "Left", duration: float = 0.5) 
 
 func _animation_slide_in_left(slot_pos: String = "Left", duration: float = 0.5) -> void:
 	var slot: TextureRect = _get_slot(slot_pos)
-	var tween: Tween = create_tween()
+	var tween: Tween = invoke_tween()
 	var slot_position: Vector2 = slot.position
 	slot.set_global_position(Vector2(-slot.size.x, slot_position.y))
 	
@@ -111,7 +142,7 @@ func _animation_slide_in_left(slot_pos: String = "Left", duration: float = 0.5) 
 
 func _animation_slide_in_right(slot_pos: String = "Left", duration: float = 0.5) -> void:
 	var slot: TextureRect = _get_slot(slot_pos)
-	var tween: Tween = create_tween()
+	var tween: Tween = invoke_tween()
 	var slot_position: Vector2 = slot.position
 	slot.set_global_position(Vector2(size.x, slot_position.y))
 	
@@ -120,14 +151,14 @@ func _animation_slide_in_right(slot_pos: String = "Left", duration: float = 0.5)
 
 func _animation_slide_in_up(slot_pos: String = "Left", duration: float = 0.5) -> void:
 	var slot: TextureRect = _get_slot(slot_pos)
-	var tween: Tween = create_tween()
+	var tween: Tween = invoke_tween()
 	var slot_position: Vector2 = slot.position
 	slot.set_global_position(Vector2(slot_position.x, -size.y))
 
 
 func _animation_slide_out_down(slot_pos: String = "Left", duration: float = 0.5) -> void:
 	var slot: TextureRect = _get_slot(slot_pos)
-	var tween: Tween = create_tween()
+	var tween: Tween = invoke_tween()
 	var slot_position: Vector2 = slot.position
 	var target_position: Vector2 = Vector2(slot_position.x, size.y)
 	
@@ -136,7 +167,7 @@ func _animation_slide_out_down(slot_pos: String = "Left", duration: float = 0.5)
 
 func _animation_slide_out_left(slot_pos: String = "Left", duration: float = 0.5) -> void:
 	var slot: TextureRect = _get_slot(slot_pos)
-	var tween: Tween = create_tween()
+	var tween: Tween = invoke_tween()
 	var slot_position: Vector2 = slot.position
 	var target_position: Vector2 =  Vector2(-slot.size.x, slot_position.y)
 	
@@ -145,7 +176,7 @@ func _animation_slide_out_left(slot_pos: String = "Left", duration: float = 0.5)
 
 func _animation_slide_out_right(slot_pos: String = "Left", duration: float = 0.5) -> void:
 	var slot: TextureRect = _get_slot(slot_pos)
-	var tween: Tween = create_tween()
+	var tween: Tween = invoke_tween()
 	var slot_position: Vector2 = slot.position
 	var target_position: Vector2 =  Vector2(size.x, slot_position.y)
 	
@@ -154,7 +185,7 @@ func _animation_slide_out_right(slot_pos: String = "Left", duration: float = 0.5
 
 func _animation_slide_out_up(slot_pos: String = "Left", duration: float = 0.5) -> void:
 	var slot: TextureRect = _get_slot(slot_pos)
-	var tween: Tween = create_tween()
+	var tween: Tween = invoke_tween()
 	var slot_position: Vector2 = slot.position
 	var target_position: Vector2 = Vector2(slot_position.x, -size.y)
 	
@@ -163,7 +194,7 @@ func _animation_slide_out_up(slot_pos: String = "Left", duration: float = 0.5) -
 
 func _animation_bounce(slot_pos: String = "Left", duration: float = 0.5) -> void:
 	var slot: TextureRect = _get_slot(slot_pos)
-	var tween: Tween = create_tween().set_parallel(true)
+	var tween: Tween = invoke_tween().set_parallel(true)
 	var slot_position: Vector2 = slot.position
 	var target_y_position: float = size.y - slot.size.y * 0.9
 	
@@ -178,7 +209,7 @@ func _animation_bounce(slot_pos: String = "Left", duration: float = 0.5) -> void
 
 func _animation_shake(slot_pos: String = "Left", duration: float = 0.5) -> void:
 	var slot: TextureRect = _get_slot(slot_pos)
-	var tween: Tween = create_tween()
+	var tween: Tween = invoke_tween()
 	var slot_position: Vector2 = slot.position
 	
 	var shake: int = 10
@@ -191,12 +222,27 @@ func _animation_shake(slot_pos: String = "Left", duration: float = 0.5) -> void:
 	await tween.tween_property(slot, "position", slot_position, 0.05)
 
 
-func _get_slot(slot: String) -> TextureRect:
+func _get_slot(slot: String) -> Variant:
 	match slot:
 		"Left": return left
 		"Center": return center
 		"Right": return right
-	return left
+	return
+
+
+func _set_character_idx(slot: String, character_idx: int) -> void:
+	match slot:
+		"Left": left_character_idx = character_idx
+		"Center": center_character_idx = character_idx
+		"Right": right_character_idx = character_idx
+
+
+func get_slot_name_from_character_idx(character_idx: int) -> Variant:
+	match character_idx:
+		left_character_idx: return "Left"
+		center_character_idx: return "Center"
+		right_character_idx: return "Right"
+	return null
 
 
 func _get_slot_subviewport(slot: String) -> SubViewport:
@@ -213,3 +259,10 @@ func _get_slot_animated_sprite(slot: String) -> AnimatedSprite2D:
 		"Center": return %CenterAnimatedSprite2D
 		"Right": return %RightAnimatedSprite2D
 	return %LeftAnimatedSprite2D
+
+
+func invoke_tween() -> Tween:
+	var tween: Tween = create_tween()
+	tween.set_trans(transition_type)
+	tween.set_ease(ease_type)
+	return tween

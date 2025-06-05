@@ -64,12 +64,6 @@ character_displayer = NodePath("../CharacterDisplayer")
 
 [node name="MonologueProcessSettings" type="Node" parent="MonologueProcess"]
 script = ExtResource("5_es2q8")
-
-[node name="TextureRect" type="TextureRect" parent="."]
-texture_filter = 1
-layout_mode = 0
-offset_right = 305.0
-offset_bottom = 305.0
-expand_mode = 1
+interpolation_type = 7
 
 [editable path="TextBox"]

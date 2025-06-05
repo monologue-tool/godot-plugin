@@ -50,6 +50,10 @@ func start_timeline(timeline: MonologueTimeline, skip_idx = "") -> void:
 	current_timeline.background = background
 	current_timeline.character_displayer = character_displayer
 	current_timeline.settings = settings
+	
+	character_displayer.set_filter(settings.texture_filter)
+	character_displayer.set_interpolation_type(settings.interpolation_type)
+	character_displayer.set_ease_type(settings.ease_type)
 
 	add_child(current_timeline)
 	

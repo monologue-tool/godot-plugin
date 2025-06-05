@@ -1,7 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://b2k8eug5u6wk4"]
+[gd_scene load_steps=5 format=3 uid="uid://b2k8eug5u6wk4"]
 
 [ext_resource type="Theme" uid="uid://cdo7e18gp5hgn" path="res://example/theme/theme.tres" id="1_hg8lw"]
 [ext_resource type="Script" uid="uid://bkrva8e83jp57" path="res://example/scenes/menu/menu.gd" id="1_kmt4s"]
+
+[sub_resource type="Gradient" id="Gradient_nlqli"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.124607, 0.111565, 0.14614, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_6mawa"]
+gradient = SubResource("Gradient_nlqli")
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -12,7 +19,18 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_kmt4s")
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_6mawa")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -20,28 +38,36 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/CenterContainer"]
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="btnPlay" type="Button" parent="CenterContainer/VBoxContainer"]
+[node name="btnPlay" type="Button" parent="HBoxContainer/CenterContainer/VBoxContainer"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 theme = ExtResource("1_hg8lw")
 text = "Play"
 
-[node name="btnSettings" type="Button" parent="CenterContainer/VBoxContainer"]
+[node name="btnSettings" type="Button" parent="HBoxContainer/CenterContainer/VBoxContainer"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 theme = ExtResource("1_hg8lw")
 text = "Settings"
 
-[node name="btnQuit" type="Button" parent="CenterContainer/VBoxContainer"]
+[node name="btnQuit" type="Button" parent="HBoxContainer/CenterContainer/VBoxContainer"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 theme = ExtResource("1_hg8lw")
 text = "Quit"
 
-[connection signal="pressed" from="CenterContainer/VBoxContainer/btnPlay" to="." method="_on_btn_play_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/btnSettings" to="." method="_on_btn_settings_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/btnQuit" to="." method="_on_btn_quit_pressed"]
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[connection signal="pressed" from="HBoxContainer/CenterContainer/VBoxContainer/btnPlay" to="." method="_on_btn_play_pressed"]
+[connection signal="pressed" from="HBoxContainer/CenterContainer/VBoxContainer/btnSettings" to="." method="_on_btn_settings_pressed"]
+[connection signal="pressed" from="HBoxContainer/CenterContainer/VBoxContainer/btnQuit" to="." method="_on_btn_quit_pressed"]
