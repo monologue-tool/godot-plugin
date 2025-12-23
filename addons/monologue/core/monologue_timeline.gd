@@ -7,12 +7,13 @@ class_name MonologueTimeline extends Node
 ## We advise you not to instantiate it yourself, but to use a [MonologueProcess] node instead.
 
 # Signals to track node and option states
-signal timeline_ended
+signal timeline_ended(next_timeline_path: String)
 signal node_reached(node: Dictionary)
 signal selected_option(option: Dictionary)
 signal _input_next
 
 # Basic timeline properties
+var parent_process: MonologueProcess
 var base_path: String
 var root_node_id: String
 var node_list: Array
@@ -80,6 +81,29 @@ static func load(path: String) -> MonologueTimeline:
 	
 	return timeline
 
+
+# Static method to load a timeline from a file and inheriting certain data from another timeline
+static func load_from_timeline(path: String, inherit_timeline: MonologueTimeline) -> MonologueTimeline:
+	var file = FileAccess.open(path, FileAccess.READ)
+	var data: Dictionary = JSON.parse_string(file.get_as_text())
+	
+	var timeline := MonologueTimeline.new()
+	
+	timeline.images = inherit_timeline.images
+	timeline.audios = inherit_timeline.audios
+	timeline.voicelines = inherit_timeline.voicelines
+	timeline.variables = inherit_timeline.variables
+	timeline.characters = inherit_timeline.characters
+	
+	timeline.base_path = file.get_path().get_base_dir()
+	timeline._load_from_dict(data)
+	
+	for node in timeline.logic_nodes:
+		timeline.add_child(node)
+	
+	return timeline
+
+
 # Load timeline data from a dictionary
 func _load_from_dict(dict: Dictionary) -> void:
 	node_list = dict.get("ListNodes", [])
@@ -88,12 +112,15 @@ func _load_from_dict(dict: Dictionary) -> void:
 	# Load characters
 	var raw_characters: Array = dict.get("Characters", [])
 	characters.resize(raw_characters.size())
-	for character in raw_characters:
+	for character: Dictionary in raw_characters:
 		characters[int(character.get("EditorIndex"))] = character
 	
 	# Load variables
-	for variable in dict.get("Variables", []):
-		variables[variable.get("Name")] = variable
+	for variable: Dictionary in dict.get("Variables", []):
+		var variable_name: String = variable.get("Name")
+		var base_variable: Dictionary = variables.get(variable_name, {})
+		base_variable.merge(variable, true)
+		variables[variable_name] = base_variable
 	
 	# Load options
 	for option in get_nodes_from_type("NodeOption"):
@@ -222,6 +249,10 @@ func _load_voicelines() -> void:
 			voicelines.load_resource(_get_correct_path(voiceline_path), ressource_id)
 
 
+func from_timeline(timeline: MonologueTimeline) -> void:
+	pass
+
+
 # Main timeline processing method
 func process(from_node_id: String = root_node_id) -> void:
 	context.nodes = node_list
@@ -274,7 +305,8 @@ func process(from_node_id: String = root_node_id) -> void:
 		
 		await get_tree().process_frame
 	
-	timeline_ended.emit()
+	var next_timeline_path: String = last_result.data.get("next_timeline_path", "")
+	timeline_ended.emit(next_timeline_path)
 	return
 
 # Utility method to get appropriate logic handler
@@ -314,7 +346,7 @@ func _process(delta: float) -> void:
 	# Inputs
 	if Input.is_action_just_pressed("ui_continue") or \
 	(Input.is_action_just_pressed("ui_mouse_continue") and text_box_container_mouse_hovering):
-		_input_next.emit()	
+		_input_next.emit()
 
 
 func compute_process_result(result: MonologueProcessResult) -> void:
@@ -341,16 +373,12 @@ func compute_process_result(result: MonologueProcessResult) -> void:
 			last_result = result
 			current_logic.process.emit()
 		MonologueProcessResult.TYPE.EXIT:
-			if next_node_id != null:
-				current_logic.process.emit()
-			else:
-				current_logic.exit(context, current_node)
-				current_logic.is_processing = false
-				_active = false
+			last_result = result
+			current_logic.is_processing = false
+			_active = false
 	
 	if next_node_id == null:
 		_active = false
-		
 
 
 func get_node_from_id(node_id: String) -> Dictionary:

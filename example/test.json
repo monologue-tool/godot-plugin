@@ -1,0 +1,997 @@
+{
+	"EditorVersion": "3.0.0-dev1",
+	"RootNodeID": "KuF40hizq3",
+	"ListNodes": [
+		{
+			"$type": "NodeSentence",
+			"ID": "9JdbArDUC5",
+			"EditorPosition": [
+				2580.0,
+				420.0
+			],
+			"NextID": "rDTakqjqyT",
+			"Speaker": 0.0,
+			"DisplayName": "",
+			"Sentence": {
+				"English": "Le frigo est plein. Des aliments parfaitement rangés."
+			},
+			"Voiceline": {
+				"English": ""
+			}
+		},
+		{
+			"$type": "NodeSentence",
+			"ID": "rDTakqjqyT",
+			"EditorPosition": [
+				3030.0,
+				330.0
+			],
+			"NextID": "KjFBsHhNG6",
+			"Speaker": 0.0,
+			"DisplayName": "",
+			"Sentence": {
+				"English": "Vous plongez dans le reflet de votre tasse de café qui vous renvoie une image troublée. Le sommeil vous fuit depuis près de deux semaines maintenant. Les nuits ne sont pas pénibles, non, mais elles ont perdu leur caractère réparateur. Les rêves aussi se sont évaporés. Est-ce le travail ? La famille ? Ou simplement une mauvaise passe ?"
+			},
+			"Voiceline": {
+				"English": ""
+			}
+		},
+		{
+			"$type": "NodeSentence",
+			"ID": "oZicckGEgB",
+			"EditorPosition": [
+				3930.0,
+				390.0
+			],
+			"NextID": "mWb9YVJ1qz",
+			"Speaker": 0.0,
+			"DisplayName": "",
+			"Sentence": {
+				"English": "[i]Sur le chemin du travail[/i]\n\nLe vendeur de journaux est à son coin habituel."
+			},
+			"Voiceline": {
+				"English": ""
+			}
+		},
+		{
+			"$type": "NodeEndPath",
+			"ID": "qX4DxOLod1",
+			"EditorPosition": [
+				6630.0,
+				540.0
+			],
+			"NextID": -1,
+			"NextStory": ""
+		},
+		{
+			"$type": "NodeSentence",
+			"ID": "1ObNTvmnbn",
+			"EditorPosition": [
+				1830.0,
+				1140.0
+			],
+			"NextID": "Ct3S8A6xHa",
+			"Speaker": 1.0,
+			"DisplayName": "",
+			"Sentence": {
+				"English": "N'est-ce pas votre propre ombre qui s'étend, plus vaste à mesure que vous poursuivez la lumière ? Ce que vous rejetez dans l'obscurité ne disparaît pas ; cela vous observe, cela s'amplifie. À force de chercher à devenir entier, vous vous fragmentez. Acceptez l'imperfection non pas comme un défaut, mais comme une invitation à danser avec ce que vous fuyez. Car ce n'est pas la lumière qui éclaire la vérité, mais la rencontre de l'ombre et du jour dans un équilibre fragile."
+			},
+			"Voiceline": {
+				"English": ""
+			}
+		},
+		{
+			"$type": "NodeSentence",
+			"ID": "YHbX3dg0rg",
+			"EditorPosition": [
+				1380.0,
+				1620.0
+			],
+			"NextID": "V7Iqwtx0Yb",
+			"Speaker": 1.0,
+			"DisplayName": "",
+			"Sentence": {
+				"English": "Qu'avez-vous vu ?"
+			},
+			"Voiceline": {
+				"English": ""
+			}
+		},
+		{
+			"$type": "NodeSentence",
+			"ID": "Sj8DtwxYGq",
+			"EditorPosition": [
+				2580.0,
+				570.0
+			],
+			"NextID": "rDTakqjqyT",
+			"Speaker": 0.0,
+			"DisplayName": "",
+			"Sentence": {
+				"English": "De toute façon je n'ai pas très faim, mon estomac ne gronde pas."
+			},
+			"Voiceline": {
+				"English": ""
+			}
+		},
+		{
+			"$type": "NodeSentence",
+			"ID": "Ct3S8A6xHa",
+			"EditorPosition": [
+				2280.0,
+				1140.0
+			],
+			"NextID": "mbZae71UKb",
+			"Speaker": 1.0,
+			"DisplayName": "",
+			"Sentence": {
+				"English": "Apprenez à regarder chaques facettes de votre personnalité."
+			},
+			"Voiceline": {
+				"English": ""
+			}
+		},
+		{
+			"$type": "NodeSentence",
+			"ID": "mbZae71UKb",
+			"EditorPosition": [
+				2730.0,
+				1140.0
+			],
+			"NextID": -1,
+			"Speaker": 0.0,
+			"DisplayName": "",
+			"Sentence": {
+				"English": "Vous entendez cette phrase comme une sorte de révélation. Vous regardez le monolithe et vous vous sentez voyager."
+			},
+			"Voiceline": {
+				"English": ""
+			}
+		},
+		{
+			"$type": "NodeSentence",
+			"ID": "0eQ2itS1ho",
+			"EditorPosition": [
+				5280.0,
+				330.0
+			],
+			"NextID": "rOiAIjGbue",
+			"Speaker": 0.0,
+			"DisplayName": "",
+			"Sentence": {
+				"English": "Vous prenez le métro et une étrange sensation s'emparre de vous. Ce n'est pas la foule habituelle, non, c'est autre chose. Comme si chaque station vous éloignait un peu plus de quelque chose. Le métro s'arrête entre deux stations. Les lumières vacillent un instant. Dans l'obscurité passagère, vous apercevez quelque chose par la fenêtre. Une lueur ? Un reflet ? Non, c'était autre chose. Quelque chose qui n'aurait pas dû être là.\n\nLa rame s'arrête à votre station."
+			},
+			"Voiceline": {
+				"English": ""
+			}
+		},
+		{
+			"$type": "NodeSetter",
+			"ID": "D1ws1Q4Unf",
+			"EditorPosition": [
+				420.0,
+				210.0
+			],
+			"NextID": "Z4RQpfFojc",
+			"SetType": "Option",
+			"OptionID": "sHj28PPSPj",
+			"Enable": true
+		},
+		{
+			"$type": "NodeSetter",
+			"ID": "Z4RQpfFojc",
+			"EditorPosition": [
+				420.0,
+				330.0
+			],
+			"NextID": "AH2tSd8vzH",
+			"SetType": "Option",
+			"OptionID": "WANiOaxPPj",
+			"Enable": ""
+		},
+		{
+			"$type": "NodeSetter",
+			"ID": "ET0i1knsbP",
+			"EditorPosition": [
+				1147.0,
+				151.0
+			],
+			"NextID": "2jK5L0x3rN",
+			"SetType": "Variable",
+			"Variable": "radio_on",
+			"Operator": "=",
+			"Value": false
+		},
+		{
+			"$type": "NodeSentence",
+			"ID": "vMeZeDSMRF",
+			"EditorPosition": [
+				1530.0,
+				-210.0
+			],
+			"NextID": "KexXORlRCV",
+			"Speaker": 0.0,
+			"DisplayName": "",
+			"Sentence": {
+				"English": "Encore quelques minutes sous la couette, à écouter la radio en fond. La musique, les infos, la météo, les embouteillages habituels."
+			},
+			"Voiceline": {
+				"English": ""
+			}
+		},
+		{
+			"$type": "NodeBridgeIn",
+			"ID": "KexXORlRCV",
+			"EditorPosition": [
+				2010.0,
+				-30.0
+			],
+			"NextID": "yf8yyvwxYy",
+			"NumberSelector": 2
+		},
+		{
+			"$type": "NodeSentence",
+			"ID": "dbKbZZs0tj",
+			"EditorPosition": [
+				2580.0,
+				240.0
+			],
+			"NextID": "rDTakqjqyT",
+			"Speaker": 0.0,
+			"DisplayName": "",
+			"Sentence": {
+				"English": "Le goût est... désagréable, je n'ai pas le sentiment d'avoir manger mais je n'avais pas tellement faim."
+			},
+			"Voiceline": {
+				"English": ""
+			}
+		},
+		{
+			"$type": "NodeSentence",
+			"ID": "KjFBsHhNG6",
+			"EditorPosition": [
+				3480.0,
+				390.0
+			],
+			"NextID": "oZicckGEgB",
+			"Speaker": 0.0,
+			"DisplayName": "",
+			"Sentence": {
+				"English": "Cette brève introspection s'évanouit soudain, laissant place à la réalité de cette journée particulière. Aujourd'hui est le grand jour : vous allez enfin devenir explorateur."
+			},
+			"Voiceline": {
+				"English": ""
+			}
+		},
+		{
+			"$type": "NodeSentence",
+			"ID": "J7zFMyNovI",
+			"EditorPosition": [
+				4830.0,
+				390.0
+			],
+			"NextID": "0eQ2itS1ho",
+			"Speaker": 0.0,
+			"DisplayName": "",
+			"Sentence": {
+				"English": "Il me fait son signe de tête habituel."
+			},
+			"Voiceline": {
+				"English": ""
+			}
+		},
+		{
+			"$type": "NodeSentence",
+			"ID": "di2az13qmZ",
+			"EditorPosition": [
+				4830.0,
+				510.0
+			],
+			"NextID": "0eQ2itS1ho",
+			"Speaker": 0.0,
+			"DisplayName": "",
+			"Sentence": {
+				"English": "Je m'approche du kiosque. Les gros titres... ils semblent flou. Je n'ai peut-être pas assez dormis."
+			},
+			"Voiceline": {
+				"English": ""
+			}
+		},
+		{
+			"$type": "NodeBridgeIn",
+			"ID": "vRCup2bjJO",
+			"EditorPosition": [
+				6630.0,
+				180.0
+			],
+			"NextID": "ttetc8ZVZi",
+			"NumberSelector": 3
+		},
+		{
+			"$type": "NodeSentence",
+			"ID": "8kUbCbZpKh",
+			"EditorPosition": [
+				6180.0,
+				510.0
+			],
+			"NextID": "qX4DxOLod1",
+			"Speaker": 0.0,
+			"DisplayName": "",
+			"Sentence": {
+				"English": "Les portes du métro se referment devant vous, vous voyez la station s'éffacer à mesure que le métro prend de la vitesse, vous reprenez vos esprits. Ce jour là vous n'irais pas au travail et vous ne serez jamais un explorateur."
+			},
+			"Voiceline": {
+				"English": ""
+			}
+		},
+		{
+			"$type": "NodeSentence",
+			"ID": "LgkHxBDl61",
+			"EditorPosition": [
+				1380.0,
+				1320.0
+			],
+			"NextID": "1ObNTvmnbn",
+			"Speaker": 0.0,
+			"DisplayName": "",
+			"Sentence": {
+				"English": "Les mots s'échappent, trahissant votre désorientation. \"Je suis perdu...\""
+			},
+			"Voiceline": {
+				"English": ""
+			}
+		},
+		{
+			"$type": "NodeSentence",
+			"ID": "z2c0Azuial",
+			"EditorPosition": [
+				1380.0,
+				1470.0
+			],
+			"NextID": -1,
+			"Speaker": 0.0,
+			"DisplayName": "",
+			"Sentence": {
+				"English": ""
+			},
+			"Voiceline": {
+				"English": ""
+			}
+		},
+		{
+			"$type": "NodeSentence",
+			"ID": "sjHcNDYyN6",
+			"EditorPosition": [
+				1530.0,
+				-30.0
+			],
+			"NextID": "KexXORlRCV",
+			"Speaker": 0.0,
+			"DisplayName": "",
+			"Sentence": {
+				"English": "Encore quelques minutes sous la couette, à entendre les voitures passer dans la rue."
+			},
+			"Voiceline": {
+				"English": ""
+			}
+		},
+		{
+			"$type": "NodeBridgeOut",
+			"ID": "ttetc8ZVZi",
+			"EditorPosition": [
+				240.0,
+				1350.0
+			],
+			"NextID": "bPh9zqA8E9",
+			"NumberSelector": 3
+		},
+		{
+			"$type": "NodeSentence",
+			"ID": "bPh9zqA8E9",
+			"EditorPosition": [
+				480.0,
+				1350.0
+			],
+			"NextID": "11T9BQjR10",
+			"Speaker": 0.0,
+			"DisplayName": "",
+			"Sentence": {
+				"English": "Vous êtes assis. Où debout ? C'est difficile à dire. Face à vous, une présence. Pas vraiment une forme, plutôt une suggestion de présence."
+			},
+			"Voiceline": {
+				"English": ""
+			}
+		},
+		{
+			"$type": "NodeSentence",
+			"ID": "KMAWkxjVoh",
+			"EditorPosition": [
+				330.0,
+				0.0
+			],
+			"NextID": "AH2tSd8vzH",
+			"Speaker": 0.0,
+			"DisplayName": "",
+			"Sentence": {
+				"English": "[i]6:30 - Le réveil sonne[/i]\n\nL'odeur du café monte déjà de la cuisine. La radio grésille doucement - toujours les mêmes chansons à la même heure."
+			},
+			"Voiceline": {
+				"English": ""
+			}
+		},
+		{
+			"$type": "NodeSentence",
+			"ID": "YOR7Or05UB",
+			"EditorPosition": [
+				1147.0,
+				301.0
+			],
+			"NextID": "PRwJxosiJU",
+			"Speaker": 0.0,
+			"DisplayName": "",
+			"Sentence": {
+				"English": "Après avoir enfilé mes chaussons, la routine du matin commence."
+			},
+			"Voiceline": {
+				"English": ""
+			}
+		},
+		{
+			"$type": "NodeSentence",
+			"ID": "PRwJxosiJU",
+			"EditorPosition": [
+				1680.0,
+				300.0
+			],
+			"NextID": "2QWsxK6FYH",
+			"Speaker": 0.0,
+			"DisplayName": "",
+			"Sentence": {
+				"English": "[i]Dans la Cuisine[/i]\n\nLe grille-pain fait encore des siennes. La tartine est à moitié brûlée."
+			},
+			"Voiceline": {
+				"English": ""
+			}
+		},
+		{
+			"$type": "NodeCondition",
+			"ID": "BHtC8XPuAO",
+			"EditorPosition": [
+				1149.0,
+				1.0
+			],
+			"IfNextID": "vMeZeDSMRF",
+			"ElseNextID": "sjHcNDYyN6",
+			"Variable": "radio_on",
+			"Operator": "=",
+			"Value": true
+		},
+		{
+			"$type": "NodeRoot",
+			"ID": "KuF40hizq3",
+			"EditorPosition": [
+				-393.0,
+				-2.0
+			],
+			"NextID": -1
+		},
+		{
+			"$type": "NodeSentence",
+			"ID": "qDN55NmKDd",
+			"EditorPosition": [
+				-30.0,
+				630.0
+			],
+			"NextID": "lt3sUd6jLM",
+			"Speaker": 0.0,
+			"DisplayName": "",
+			"Sentence": {
+				"English": ""
+			},
+			"Voiceline": {
+				"English": ""
+			}
+		},
+		{
+			"$type": "NodeSentence",
+			"ID": "lt3sUd6jLM",
+			"EditorPosition": [
+				508.0,
+				621.0
+			],
+			"NextID": "ZQuHzlo52k",
+			"Speaker": 0.0,
+			"DisplayName": "",
+			"Sentence": {
+				"English": ""
+			},
+			"Voiceline": {
+				"English": ""
+			}
+		},
+		{
+			"$type": "NodeCondition",
+			"ID": "ZQuHzlo52k",
+			"EditorPosition": [
+				1007.0,
+				606.0
+			],
+			"IfNextID": -1,
+			"ElseNextID": -1,
+			"Variable": "radio_on",
+			"Operator": "=",
+			"Value": false
+		},
+		{
+			"$type": "NodeAction",
+			"ID": "sF5ckCLC8V",
+			"EditorPosition": {
+				"x": 368.0,
+				"y": -229.0
+			},
+			"NextID": -1,
+			"Action": "",
+			"Arguments": []
+		},
+		{
+			"$type": "NodeSentence",
+			"ID": "ZarjAkFpsw",
+			"EditorPosition": [
+				6186.0,
+				-3.0
+			],
+			"NextID": "vRCup2bjJO",
+			"Speaker": 0.0,
+			"DisplayName": "",
+			"Sentence": {
+				"English": "Vous descendez du métro, votre cœur bat fort, vous stressez, les gens vous bousculent, les murs du couloir semblent perdre leur substance, comme de la peinture qui se dilue. Les bruits de la station s'estompent progressivement, remplacés par un silence cotonneux. Les détails familiers s'effacent un à un. Le carrelage sous vos pieds, les publicités sur les murs, les autres voyageurs - tout se fond dans une blancheur grandissante. Seul le chemin devant vous reste défini, comme une invitation. Vos pas résonnent désormais dans un espace qui semble infini. Le blanc a tout envahi, sauf... cette forme qui se dresse devant vous. Une structure sombre, géométrique, imposante.\n\n[b]Un monolithe.[/b]"
+			},
+			"Voiceline": {
+				"English": ""
+			}
+		},
+		{
+			"$type": "NodeSentence",
+			"ID": "2jK5L0x3rN",
+			"EditorPosition": [
+				1530.0,
+				120.0
+			],
+			"NextID": "KexXORlRCV",
+			"Speaker": 0.0,
+			"DisplayName": "",
+			"Sentence": {
+				"English": "Je tends la main vers la radio et l'éteint. L'instant d'après j'oublie quelle musique passait."
+			},
+			"Voiceline": {
+				"English": ""
+			}
+		},
+		{
+			"$type": "NodeBridgeOut",
+			"ID": "yf8yyvwxYy",
+			"EditorPosition": [
+				180.0,
+				210.0
+			],
+			"NextID": "D1ws1Q4Unf",
+			"NumberSelector": 2
+		},
+		{
+			"$type": "NodeChoice",
+			"ID": "rOiAIjGbue",
+			"EditorPosition": [
+				5735.984375,
+				333.59521484375
+			],
+			"NextID": "ZarjAkFpsw",
+			"OptionsID": [
+				"kqUVahRr5n",
+				"vKLtI1GRip"
+			]
+		},
+		{
+			"$type": "NodeOption",
+			"ID": "kqUVahRr5n",
+			"EditorPosition": [
+				0.0,
+				0.0
+			],
+			"NextID": "ZarjAkFpsw",
+			"Option": {
+				"English": "Descendre du métro"
+			},
+			"EnableByDefault": true,
+			"OneShot": false
+		},
+		{
+			"$type": "NodeOption",
+			"ID": "vKLtI1GRip",
+			"EditorPosition": [
+				0.0,
+				0.0
+			],
+			"NextID": "8kUbCbZpKh",
+			"Option": {
+				"English": "Attendre"
+			},
+			"EnableByDefault": true,
+			"OneShot": false
+		},
+		{
+			"$type": "NodeChoice",
+			"ID": "11T9BQjR10",
+			"EditorPosition": [
+				935.919921875,
+				1325.11437988281
+			],
+			"NextID": "LgkHxBDl61",
+			"OptionsID": [
+				"rdOxd8cgyX",
+				"ZMpXfi5vbP",
+				"Xf5h6LxItw"
+			]
+		},
+		{
+			"$type": "NodeOption",
+			"ID": "rdOxd8cgyX",
+			"EditorPosition": [
+				0.0,
+				0.0
+			],
+			"NextID": "LgkHxBDl61",
+			"Option": {
+				"English": "Où suis-je ?"
+			},
+			"EnableByDefault": true,
+			"OneShot": false
+		},
+		{
+			"$type": "NodeOption",
+			"ID": "ZMpXfi5vbP",
+			"EditorPosition": [
+				0.0,
+				0.0
+			],
+			"NextID": "z2c0Azuial",
+			"Option": {
+				"English": "Qui est-ce ?"
+			},
+			"EnableByDefault": true,
+			"OneShot": false
+		},
+		{
+			"$type": "NodeOption",
+			"ID": "Xf5h6LxItw",
+			"EditorPosition": [
+				0.0,
+				0.0
+			],
+			"NextID": "YHbX3dg0rg",
+			"Option": {
+				"English": " ..."
+			},
+			"EnableByDefault": true,
+			"OneShot": false
+		},
+		{
+			"$type": "NodeChoice",
+			"ID": "mWb9YVJ1qz",
+			"EditorPosition": [
+				4401.603515625,
+				370.661346435547
+			],
+			"NextID": "J7zFMyNovI",
+			"OptionsID": [
+				"XarRF5ODMb",
+				"MU6Yrh1YDH"
+			]
+		},
+		{
+			"$type": "NodeOption",
+			"ID": "XarRF5ODMb",
+			"EditorPosition": [
+				0.0,
+				0.0
+			],
+			"NextID": "J7zFMyNovI",
+			"Option": {
+				"English": "L'ignorer comme d'habitude"
+			},
+			"EnableByDefault": true,
+			"OneShot": false
+		},
+		{
+			"$type": "NodeOption",
+			"ID": "MU6Yrh1YDH",
+			"EditorPosition": [
+				0.0,
+				0.0
+			],
+			"NextID": "di2az13qmZ",
+			"Option": {
+				"English": "Acheter un journal pour une fois"
+			},
+			"EnableByDefault": true,
+			"OneShot": false
+		},
+		{
+			"$type": "NodeChoice",
+			"ID": "2QWsxK6FYH",
+			"EditorPosition": [
+				2140.5693359375,
+				305.795623779297
+			],
+			"NextID": "dbKbZZs0tj",
+			"OptionsID": [
+				"UgHOcEE6ut",
+				"MEIDPVeiKM",
+				"5PbNNbBtPj"
+			]
+		},
+		{
+			"$type": "NodeOption",
+			"ID": "UgHOcEE6ut",
+			"EditorPosition": [
+				0.0,
+				0.0
+			],
+			"NextID": "dbKbZZs0tj",
+			"Option": {
+				"English": "Manger la tartine brûlée"
+			},
+			"EnableByDefault": true,
+			"OneShot": false
+		},
+		{
+			"$type": "NodeOption",
+			"ID": "MEIDPVeiKM",
+			"EditorPosition": [
+				0.0,
+				0.0
+			],
+			"NextID": "9JdbArDUC5",
+			"Option": {
+				"English": "Chercher autre chose dans le frigo"
+			},
+			"EnableByDefault": true,
+			"OneShot": false
+		},
+		{
+			"$type": "NodeOption",
+			"ID": "5PbNNbBtPj",
+			"EditorPosition": [
+				0.0,
+				0.0
+			],
+			"NextID": "Sj8DtwxYGq",
+			"Option": {
+				"English": "Ne pas manger."
+			},
+			"EnableByDefault": true,
+			"OneShot": false
+		},
+		{
+			"$type": "NodeChoice",
+			"ID": "V7Iqwtx0Yb",
+			"EditorPosition": [
+				1881.10632324219,
+				1501.17846679688
+			],
+			"NextID": -1,
+			"OptionsID": [
+				"Xf5lnlRnyS",
+				"xkhBZ2Fnoy"
+			]
+		},
+		{
+			"$type": "NodeOption",
+			"ID": "Xf5lnlRnyS",
+			"EditorPosition": [
+				0.0,
+				0.0
+			],
+			"NextID": -1.0,
+			"Option": {
+				"English": ""
+			},
+			"EnableByDefault": true,
+			"OneShot": false
+		},
+		{
+			"$type": "NodeOption",
+			"ID": "xkhBZ2Fnoy",
+			"EditorPosition": [
+				0.0,
+				0.0
+			],
+			"NextID": -1.0,
+			"Option": {
+				"English": ""
+			},
+			"EnableByDefault": true,
+			"OneShot": false
+		},
+		{
+			"$type": "NodeChoice",
+			"ID": "AH2tSd8vzH",
+			"EditorPosition": [
+				754.884582519531,
+				11.2665338516235
+			],
+			"NextID": "BHtC8XPuAO",
+			"OptionsID": [
+				"GzZt8XX9PG",
+				"WANiOaxPPj",
+				"byQ79tFs86",
+				"sHj28PPSPj"
+			]
+		},
+		{
+			"$type": "NodeOption",
+			"ID": "GzZt8XX9PG",
+			"EditorPosition": [
+				0.0,
+				0.0
+			],
+			"NextID": "BHtC8XPuAO",
+			"Option": {
+				"English": "Rester au lit encore 5 minutes"
+			},
+			"EnableByDefault": false,
+			"OneShot": true
+		},
+		{
+			"$type": "NodeOption",
+			"ID": "WANiOaxPPj",
+			"EditorPosition": [
+				0.0,
+				0.0
+			],
+			"NextID": "YOR7Or05UB",
+			"Option": {
+				"English": "Se lever immédiatement"
+			},
+			"EnableByDefault": true,
+			"OneShot": false
+		},
+		{
+			"$type": "NodeOption",
+			"ID": "byQ79tFs86",
+			"EditorPosition": [
+				0.0,
+				0.0
+			],
+			"NextID": "ET0i1knsbP",
+			"Option": {
+				"English": "Éteindre la radio"
+			},
+			"EnableByDefault": true,
+			"OneShot": true
+		},
+		{
+			"$type": "NodeOption",
+			"ID": "sHj28PPSPj",
+			"EditorPosition": [
+				0.0,
+				0.0
+			],
+			"NextID": "YOR7Or05UB",
+			"Option": {
+				"English": "Se lever"
+			},
+			"EnableByDefault": false,
+			"OneShot": false
+		}
+	],
+	"Characters": [
+		{
+			"ID": "wsV9i",
+			"EditorIndex": 0.0,
+			"Protected": true,
+			"Character": {
+				"Name": "_NARRATOR",
+				"Portraits": [
+					{
+						"ID": "WjtYx",
+						"Name": "new portrait 1",
+						"Portrait": {
+							"PortraitType": "Animation"
+						},
+						"EditorIndex": 0.0
+					}
+				],
+				"Nicknames": "",
+				"DisplayName": "",
+				"Description": "",
+				"DefaultPortrait": "WjtYx"
+			}
+		},
+		{
+			"ID": "57BON",
+			"EditorIndex": 1.0,
+			"Protected": false,
+			"Character": {
+				"Name": "[•]",
+				"Portraits": [
+					{
+						"ID": "t1st2",
+						"Name": "idle",
+						"Portrait": {
+							"PortraitType": "Animation",
+							"Animation": {
+								"Fps": 10.0,
+								"FrameCount": 8.0,
+								"Layers": [
+									{
+										"LayerName": "Layer 1",
+										"Visible": true,
+										"Frames": {
+											"0": {
+												"ImagePath": "ezgif-split/tile000.png",
+												"Exposure": 1.0
+											},
+											"1": {
+												"ImagePath": "ezgif-split/tile001.png",
+												"Exposure": 1.0
+											},
+											"2": {
+												"ImagePath": "ezgif-split/tile002.png",
+												"Exposure": 1.0
+											},
+											"3": {
+												"ImagePath": "ezgif-split/tile003.png",
+												"Exposure": 1.0
+											},
+											"4": {
+												"ImagePath": "ezgif-split/tile004.png",
+												"Exposure": 1.0
+											},
+											"5": {
+												"ImagePath": "ezgif-split/tile005.png",
+												"Exposure": 1.0
+											},
+											"6": {
+												"ImagePath": "ezgif-split/tile006.png",
+												"Exposure": 1.0
+											},
+											"7": {
+												"ImagePath": "ezgif-split/tile007.png",
+												"Exposure": 1.0
+											}
+										}
+									}
+								]
+							},
+							"Mirror": false
+						},
+						"EditorIndex": 0.0
+					},
+					{
+						"ID": "MZi0D",
+						"Name": "new portrait 2",
+						"Portrait": {
+							"PortraitType": "Animation"
+						},
+						"EditorIndex": 1.0
+					}
+				],
+				"Nicknames": "",
+				"DisplayName": "",
+				"Description": "",
+				"DefaultPortrait": "t1st2"
+			}
+		}
+	],
+	"Variables": [
+		{
+			"Name": "radio_on",
+			"Type": "Boolean",
+			"Value": true
+		}
+	],
+	"Languages": [
+		"English",
+		"French"
+	]
+}

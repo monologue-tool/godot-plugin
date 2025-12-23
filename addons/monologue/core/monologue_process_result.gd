@@ -26,10 +26,11 @@ static func interrupt_process(next_node_id: Variant) -> MonologueProcessResult:
 	return result
 
 
-static func exit_process(reason: String = "") -> MonologueProcessResult:
+static func exit_process(reason: String = "", next_timeline_path: String = "") -> MonologueProcessResult:
 	var result := MonologueProcessResult.new()
 	result.type = TYPE.EXIT
 	result.data["reason"] = reason
+	result.data["next_timeline_path"] = next_timeline_path
 	return result
 
 static func none() -> MonologueProcessResult:

@@ -44,12 +44,15 @@ var current_timeline: MonologueTimeline = null
 func start_timeline(timeline: MonologueTimeline, skip_idx = "") -> void:
 	current_timeline = timeline
 	
+	current_timeline.parent_process = self
 	current_timeline.text_box = text_box
 	current_timeline.text_box_container = text_box_container
 	current_timeline.choice_selector = choice_selector
 	current_timeline.background = background
 	current_timeline.character_displayer = character_displayer
 	current_timeline.settings = settings
+	
+	current_timeline.timeline_ended.connect(_on_timeline_ended)
 	
 	character_displayer.set_filter(settings.texture_filter)
 	character_displayer.set_interpolation_type(settings.interpolation_type)
@@ -67,3 +70,14 @@ func preload_timeline(path: String) -> MonologueTimeline:
 		printerr("Can't preload timeline")
 	
 	return timeline
+
+
+func _on_timeline_ended(next_timeline_path: String) -> void:
+	if not next_timeline_path:
+		return
+	
+	var timeline := MonologueTimeline.load_from_timeline(next_timeline_path as String, current_timeline)
+	if timeline == null:
+		printerr("Can't preload timeline")
+		
+	start_timeline(timeline)

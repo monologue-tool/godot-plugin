@@ -1,0 +1,789 @@
+{
+	"EditorVersion": "3.0.0-dev2",
+	"RootNodeID": "Yd3ukQ7x28",
+	"ListNodes": [
+		{
+			"$type": "NodeChoice",
+			"ID": "damk9O1wv3",
+			"EditorPosition": [
+				2730.0,
+				120.0
+			],
+			"NextID": "6w6c13iZg0",
+			"OptionsID": [
+				"cwdne9TS6a",
+				"8NSd22IV67",
+				"SEb0Mwara1"
+			]
+		},
+		{
+			"$type": "NodeOption",
+			"ID": "cwdne9TS6a",
+			"EditorPosition": [
+				0.0,
+				0.0
+			],
+			"NextID": "6w6c13iZg0",
+			"Option": {
+				"English": "Start over"
+			},
+			"EnableByDefault": true,
+			"OneShot": false
+		},
+		{
+			"$type": "NodeOption",
+			"ID": "8NSd22IV67",
+			"EditorPosition": [
+				0.0,
+				0.0
+			],
+			"NextID": "iv4vEH64zI",
+			"Option": {
+				"English": "Continue"
+			},
+			"EnableByDefault": true,
+			"OneShot": false
+		},
+		{
+			"$type": "NodeOption",
+			"ID": "SEb0Mwara1",
+			"EditorPosition": [
+				0.0,
+				0.0
+			],
+			"NextID": "iNtZ1WZeN0",
+			"Option": {
+				"English": "Jump ahead"
+			},
+			"EnableByDefault": true,
+			"OneShot": false
+		},
+		{
+			"$type": "NodeSetter",
+			"ID": "q17azT9IaZ",
+			"EditorPosition": [
+				5820.0,
+				360.0
+			],
+			"NextID": "kKJnitOaUZ",
+			"SetType": "Variable",
+			"Variable": "started_over",
+			"Operator": "=",
+			"Value": true
+		},
+		{
+			"$type": "NodeBridgeIn",
+			"ID": "kKJnitOaUZ",
+			"EditorPosition": [
+				6210.0,
+				360.0
+			],
+			"NextID": "j6vxiJm6Uc",
+			"NumberSelector": 1
+		},
+		{
+			"$type": "NodeSetter",
+			"ID": "iNtZ1WZeN0",
+			"EditorPosition": [
+				3120.0,
+				360.0
+			],
+			"NextID": "byXkvFxrk3",
+			"SetType": "Variable",
+			"Variable": "jump_ahead",
+			"Operator": "=",
+			"Value": true
+		},
+		{
+			"$type": "NodeSentence",
+			"ID": "EIqHRWzZGR",
+			"EditorPosition": [
+				4860.0,
+				360.0
+			],
+			"NextID": "IUbPC6WA0c",
+			"Speaker": 0.0,
+			"DisplayName": "",
+			"Sentence": {
+				"English": "As you wish."
+			},
+			"Voiceline": {
+				"English": ""
+			}
+		},
+		{
+			"$type": "NodeSentence",
+			"ID": "IUbPC6WA0c",
+			"EditorPosition": [
+				5340.0,
+				360.0
+			],
+			"NextID": "q17azT9IaZ",
+			"Speaker": 0.0,
+			"DisplayName": "",
+			"Sentence": {
+				"English": "Starting over..."
+			},
+			"Voiceline": {
+				"English": ""
+			}
+		},
+		{
+			"$type": "NodeSentence",
+			"ID": "BfvMz1hvNn",
+			"EditorPosition": [
+				3510.0,
+				660.0
+			],
+			"NextID": "AfxMW4b1ei",
+			"Speaker": 0.0,
+			"DisplayName": "",
+			"Sentence": {
+				"English": "Well, let's continue."
+			},
+			"Voiceline": {
+				"English": ""
+			}
+		},
+		{
+			"$type": "NodeSentence",
+			"ID": "AfxMW4b1ei",
+			"EditorPosition": [
+				3990.0,
+				660.0
+			],
+			"NextID": "WuX9t6DifB",
+			"Speaker": 0.0,
+			"DisplayName": "",
+			"Sentence": {
+				"English": "Want to start over ?"
+			},
+			"Voiceline": {
+				"English": ""
+			}
+		},
+		{
+			"$type": "NodeChoice",
+			"ID": "WuX9t6DifB",
+			"EditorPosition": [
+				4470.0,
+				660.0
+			],
+			"NextID": "aNOsZZbnNf",
+			"OptionsID": [
+				"cg5BA1csTX",
+				"7JIP0kPof6",
+				"zeVnPbY2gO"
+			]
+		},
+		{
+			"$type": "NodeOption",
+			"ID": "cg5BA1csTX",
+			"EditorPosition": [
+				0.0,
+				0.0
+			],
+			"NextID": "aNOsZZbnNf",
+			"Option": {
+				"English": "Yes"
+			},
+			"EnableByDefault": true,
+			"OneShot": false
+		},
+		{
+			"$type": "NodeOption",
+			"ID": "7JIP0kPof6",
+			"EditorPosition": [
+				0.0,
+				0.0
+			],
+			"NextID": "Rxak1oZwhF",
+			"Option": {
+				"English": "Uhmm"
+			},
+			"EnableByDefault": true,
+			"OneShot": false
+		},
+		{
+			"$type": "NodeOption",
+			"ID": "zeVnPbY2gO",
+			"EditorPosition": [
+				0.0,
+				0.0
+			],
+			"NextID": "v5AASDgC6Q",
+			"Option": {
+				"English": "No"
+			},
+			"EnableByDefault": true,
+			"OneShot": false
+		},
+		{
+			"$type": "NodeBridgeIn",
+			"ID": "Rxak1oZwhF",
+			"EditorPosition": [
+				4860.0,
+				810.0
+			],
+			"NextID": "G9IPAb6vs1",
+			"NumberSelector": 2
+		},
+		{
+			"$type": "NodeBridgeIn",
+			"ID": "TIst89ydxQ",
+			"EditorPosition": [
+				5250.0,
+				690.0
+			],
+			"NextID": "j6vxiJm6Uc",
+			"NumberSelector": 1
+		},
+		{
+			"$type": "NodeEndPath",
+			"ID": "gWq05Vw5kq",
+			"EditorPosition": [
+				5443.849609375,
+				896.983337402344
+			],
+			"NextID": -1,
+			"NextStory": "main_2.json"
+		},
+		{
+			"$type": "NodeSentence",
+			"ID": "6w6c13iZg0",
+			"EditorPosition": [
+				3180.0,
+				120.0
+			],
+			"NextID": "I4x0rVHVaP",
+			"Speaker": 0.0,
+			"DisplayName": "",
+			"Sentence": {
+				"English": "Starting over?"
+			},
+			"Voiceline": {
+				"English": ""
+			}
+		},
+		{
+			"$type": "NodeChoice",
+			"ID": "I4x0rVHVaP",
+			"EditorPosition": [
+				3630.0,
+				120.0
+			],
+			"NextID": "gl0OWZIpm9",
+			"OptionsID": [
+				"uinbgqbjMw",
+				"O68i43FRD6",
+				"uBmGBuMAjh"
+			]
+		},
+		{
+			"$type": "NodeOption",
+			"ID": "uinbgqbjMw",
+			"EditorPosition": [
+				0.0,
+				0.0
+			],
+			"NextID": "gl0OWZIpm9",
+			"Option": {
+				"English": "Yes, I'm sure."
+			},
+			"EnableByDefault": true,
+			"OneShot": false
+		},
+		{
+			"$type": "NodeOption",
+			"ID": "O68i43FRD6",
+			"EditorPosition": [
+				0.0,
+				0.0
+			],
+			"NextID": "ovsJBsJRts",
+			"Option": {
+				"English": "Uhm..."
+			},
+			"EnableByDefault": true,
+			"OneShot": false
+		},
+		{
+			"$type": "NodeOption",
+			"ID": "uBmGBuMAjh",
+			"EditorPosition": [
+				0.0,
+				0.0
+			],
+			"NextID": "zf5SDccix1",
+			"Option": {
+				"English": "No. Don't."
+			},
+			"EnableByDefault": true,
+			"OneShot": false
+		},
+		{
+			"$type": "NodeBridgeIn",
+			"ID": "l1NQS8eUik",
+			"EditorPosition": [
+				5010.0,
+				120.0
+			],
+			"NextID": "j6vxiJm6Uc",
+			"NumberSelector": 1
+		},
+		{
+			"$type": "NodeRoot",
+			"ID": "Yd3ukQ7x28",
+			"EditorPosition": [
+				0.0,
+				0.0
+			],
+			"NextID": "n3jsT1nKWT"
+		},
+		{
+			"$type": "NodeBridgeOut",
+			"ID": "j6vxiJm6Uc",
+			"EditorPosition": [
+				141.0,
+				167.0
+			],
+			"NextID": "n3jsT1nKWT",
+			"NumberSelector": 1
+		},
+		{
+			"$type": "NodeChoice",
+			"ID": "Ahl2JiOo7Z",
+			"EditorPosition": [
+				4576.9921875,
+				225.734420776367
+			],
+			"NextID": "VGT7Iw0dTe",
+			"OptionsID": [
+				"PlndQGmdpZ",
+				"a4y85xGZEt"
+			]
+		},
+		{
+			"$type": "NodeOption",
+			"ID": "PlndQGmdpZ",
+			"EditorPosition": [
+				0.0,
+				0.0
+			],
+			"NextID": "VGT7Iw0dTe",
+			"Option": {
+				"English": "Yeah... maybe I should..."
+			},
+			"EnableByDefault": true,
+			"OneShot": false
+		},
+		{
+			"$type": "NodeOption",
+			"ID": "a4y85xGZEt",
+			"EditorPosition": [
+				0.0,
+				0.0
+			],
+			"NextID": "EIqHRWzZGR",
+			"Option": {
+				"English": "No... I'll do it"
+			},
+			"EnableByDefault": true,
+			"OneShot": false
+		},
+		{
+			"$type": "NodeSentence",
+			"ID": "gl0OWZIpm9",
+			"EditorPosition": [
+				4095.17407226563,
+				108.112007141113
+			],
+			"NextID": "msOJSzozpo",
+			"Speaker": 0.0,
+			"DisplayName": "",
+			"Sentence": {
+				"English": "Alrighty then."
+			},
+			"Voiceline": {
+				"English": ""
+			}
+		},
+		{
+			"$type": "NodeCharacter",
+			"ID": "oaIh4NB7oe",
+			"EditorPosition": [
+				1050.0,
+				120.0
+			],
+			"NextID": "TS8XunfM4q",
+			"Character": 2.0,
+			"ActionType": "Join",
+			"Position": "Left",
+			"JoinAnimation": "Slide In Left",
+			"Portrait": "happy",
+			"Duration": 0.5,
+			"ZIndex": 0.0,
+			"Mirrored": false
+		},
+		{
+			"$type": "NodeSentence",
+			"ID": "TS8XunfM4q",
+			"EditorPosition": [
+				1410.0,
+				118.33332824707
+			],
+			"NextID": "05JZJ5HU4l",
+			"Speaker": 2.0,
+			"DisplayName": "",
+			"Sentence": {
+				"English": "Hi there! My name's Sophia. How about you ?"
+			},
+			"Voiceline": {
+				"English": ""
+			}
+		},
+		{
+			"$type": "NodeSentence",
+			"ID": "mN1pGAx7x9",
+			"EditorPosition": [
+				2280.0,
+				120.0
+			],
+			"NextID": "damk9O1wv3",
+			"Speaker": 1.0,
+			"DisplayName": "",
+			"Sentence": {
+				"English": "Hey, I'm Dani!"
+			},
+			"Voiceline": {
+				"English": ""
+			}
+		},
+		{
+			"$type": "NodeCharacter",
+			"ID": "05JZJ5HU4l",
+			"EditorPosition": [
+				1918.78784179688,
+				116.969696044922
+			],
+			"NextID": "mN1pGAx7x9",
+			"Character": 1.0,
+			"ActionType": "Join",
+			"Position": "Right",
+			"JoinAnimation": "Slide In Right",
+			"Portrait": "neutral",
+			"Duration": 0.5,
+			"ZIndex": 0.0,
+			"Mirrored": true
+		},
+		{
+			"$type": "NodeSetter",
+			"ID": "iv4vEH64zI",
+			"EditorPosition": [
+				3181.9833984375,
+				245.509643554688
+			],
+			"NextID": "BfvMz1hvNn",
+			"SetType": "Variable",
+			"Variable": "jump_ahead",
+			"Operator": "=",
+			"Value": false
+		},
+		{
+			"$type": "NodeSentence",
+			"ID": "ovsJBsJRts",
+			"EditorPosition": [
+				4100.0,
+				248.33332824707
+			],
+			"NextID": "Ahl2JiOo7Z",
+			"Speaker": 0.0,
+			"DisplayName": "",
+			"Sentence": {
+				"English": "Maybe you should think about this more..."
+			},
+			"Voiceline": {
+				"English": ""
+			}
+		},
+		{
+			"$type": "NodeSetter",
+			"ID": "aNOsZZbnNf",
+			"EditorPosition": [
+				4955.38818359375,
+				685.563354492188
+			],
+			"NextID": "TIst89ydxQ",
+			"SetType": "Variable",
+			"Variable": "started_over",
+			"Operator": "=",
+			"Value": true
+		},
+		{
+			"$type": "NodeSentence",
+			"ID": "Vo7QLaibZQ",
+			"EditorPosition": [
+				4535.5048828125,
+				506.114959716797
+			],
+			"NextID": "6mc8Pf4VpS",
+			"Speaker": 0.0,
+			"DisplayName": "",
+			"Sentence": {
+				"English": "Be careful the next time you think about starting over!"
+			},
+			"Voiceline": {
+				"English": ""
+			}
+		},
+		{
+			"$type": "NodeBridgeIn",
+			"ID": "6mc8Pf4VpS",
+			"EditorPosition": [
+				4974.4013671875,
+				537.781677246094
+			],
+			"NextID": "j6vxiJm6Uc",
+			"NumberSelector": 1
+		},
+		{
+			"$type": "NodeSentence",
+			"ID": "zf5SDccix1",
+			"EditorPosition": [
+				4084.61474609375,
+				500.330322265625
+			],
+			"NextID": "Vo7QLaibZQ",
+			"Speaker": 0.0,
+			"DisplayName": "",
+			"Sentence": {
+				"English": "Well..."
+			},
+			"Voiceline": {
+				"English": ""
+			}
+		},
+		{
+			"$type": "NodeBridgeIn",
+			"ID": "VGT7Iw0dTe",
+			"EditorPosition": [
+				5048.55810546875,
+				263.345001220703
+			],
+			"NextID": "G9IPAb6vs1",
+			"NumberSelector": 2
+		},
+		{
+			"$type": "NodeBridgeIn",
+			"ID": "byXkvFxrk3",
+			"EditorPosition": [
+				3478.943359375,
+				784.436645507813
+			],
+			"NextID": "v1sUl17E0J",
+			"NumberSelector": 3
+		},
+		{
+			"$type": "NodeSetter",
+			"ID": "msOJSzozpo",
+			"EditorPosition": [
+				4560.9521484375,
+				120.0
+			],
+			"NextID": "l1NQS8eUik",
+			"SetType": "Variable",
+			"Variable": "started_over",
+			"Operator": "=",
+			"Value": true
+		},
+		{
+			"$type": "NodeBridgeOut",
+			"ID": "G9IPAb6vs1",
+			"EditorPosition": [
+				2940.95190429688,
+				27.781665802002
+			],
+			"NextID": "6w6c13iZg0",
+			"NumberSelector": 2
+		},
+		{
+			"$type": "NodeSentence",
+			"ID": "v5AASDgC6Q",
+			"EditorPosition": [
+				4962.85009765625,
+				897.983337402344
+			],
+			"NextID": "gWq05Vw5kq",
+			"Speaker": 0.0,
+			"DisplayName": "",
+			"Sentence": {
+				"English": "And thus started Sophia and Dani's journey."
+			},
+			"Voiceline": {
+				"English": ""
+			}
+		},
+		{
+			"$type": "NodeBridgeOut",
+			"ID": "v1sUl17E0J",
+			"EditorPosition": [
+				4659.33349609375,
+				989.75
+			],
+			"NextID": "v5AASDgC6Q",
+			"NumberSelector": 3
+		},
+		{
+			"$type": "NodeBackground",
+			"ID": "n3jsT1nKWT",
+			"EditorPosition": [
+				620.068359375,
+				-1.66666650772095
+			],
+			"NextID": "oaIh4NB7oe",
+			"Image": "assets/backgrounds/dani_bedroom.jpg",
+			"Transition": "Simple Fade",
+			"Duration": 0.0
+		}
+	],
+	"Characters": [
+		{
+			"ID": "Eh7sQgJylM",
+			"Protected": true,
+			"Character": {
+				"Name": "_NARRATOR",
+				"Nicknames": "",
+				"DisplayName": "",
+				"Description": "",
+				"Portraits": [],
+				"DefaultPortrait": ""
+			},
+			"EditorIndex": 0.0
+		},
+		{
+			"ID": "ucEJEZjOb7",
+			"Protected": false,
+			"Character": {
+				"Name": "Dani",
+				"Portraits": [
+					{
+						"ID": "iMck7",
+						"Name": "neutral",
+						"Portrait": {
+							"ImagePath": "assets/dani/dani_neutral.png",
+							"Mirror": false
+						},
+						"EditorIndex": 0.0
+					},
+					{
+						"ID": "pkLLO",
+						"Name": "angry",
+						"Portrait": {
+							"ImagePath": "assets/dani/dani_angry.png"
+						},
+						"EditorIndex": 1.0
+					},
+					{
+						"ID": "BtA2n",
+						"Name": "happy",
+						"Portrait": {
+							"ImagePath": "assets/dani/dani_happy.png"
+						},
+						"EditorIndex": 2.0
+					},
+					{
+						"ID": "M7mrj",
+						"Name": "sad",
+						"Portrait": {
+							"ImagePath": "assets/dani/dani_sad.png"
+						},
+						"EditorIndex": 3.0
+					},
+					{
+						"ID": "9nJMG",
+						"Name": "surprised",
+						"Portrait": {
+							"ImagePath": "assets/dani/dani_surprised.png"
+						},
+						"EditorIndex": 4.0
+					}
+				],
+				"Nicknames": "dani",
+				"DisplayName": "",
+				"Description": "",
+				"DefaultPortrait": "iMck7"
+			},
+			"EditorIndex": 1.0
+		},
+		{
+			"ID": "vzZLCo4zWW",
+			"Protected": false,
+			"Character": {
+				"Name": "Sophia",
+				"Nicknames": "sophia",
+				"Portraits": [
+					{
+						"ID": "HqRLA",
+						"Name": "neutral",
+						"Portrait": {
+							"ImagePath": "assets/sophia/sophia_neutral.png"
+						},
+						"EditorIndex": 0.0
+					},
+					{
+						"ID": "uZbJ2",
+						"Name": "happy",
+						"Portrait": {
+							"Mirror": false,
+							"ImagePath": "assets/sophia/sophia_happy.png"
+						},
+						"EditorIndex": 1.0
+					},
+					{
+						"ID": "E5wlF",
+						"Name": "angry",
+						"Portrait": {
+							"ImagePath": "assets/sophia/sophia_angry.png"
+						},
+						"EditorIndex": 2.0
+					},
+					{
+						"ID": "4JRDt",
+						"Name": "sad",
+						"Portrait": {
+							"ImagePath": "assets/sophia/sophia_sad.png"
+						},
+						"EditorIndex": 3.0
+					},
+					{
+						"ID": "6xTcV",
+						"Name": "surprised",
+						"Portrait": {
+
+						},
+						"EditorIndex": 4.0
+					}
+				],
+				"DisplayName": "",
+				"Description": "",
+				"DefaultPortrait": "HqRLA"
+			},
+			"EditorIndex": 2.0
+		}
+	],
+	"Variables": [
+		{
+			"Name": "started_over",
+			"Type": "Boolean",
+			"Value": false
+		},
+		{
+			"Name": "jump_ahead",
+			"Type": "Boolean",
+			"Value": false
+		}
+	],
+	"Languages": [
+		"English"
+	]
+}

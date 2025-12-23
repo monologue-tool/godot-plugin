@@ -1,0 +1,856 @@
+{
+	"EditorVersion": "3.0.0-dev2",
+	"RootNodeID": "xZvsPEvg2X",
+	"ListNodes": [
+		{
+			"$type": "NodeSentence",
+			"ID": "KIDevCsr7g",
+			"EditorPosition": [
+				2280.0,
+				120.0
+			],
+			"NextID": "xBHya67OWs",
+			"Speaker": 1.0,
+			"DisplayName": "",
+			"Sentence": {
+				"English": "Beats me. {{ if jump_ahead then \"yoooo\" else \"noooooo\" }}"
+			},
+			"Voiceline": {
+				"English": ""
+			}
+		},
+		{
+			"$type": "NodeCondition",
+			"ID": "ncvtXLBmUh",
+			"EditorPosition": [
+				3240.0,
+				120.0
+			],
+			"IfNextID": "1w0ieRCkIF",
+			"ElseNextID": "xpUFTXfNyx",
+			"Variable": "jump_ahead",
+			"Operator": "=",
+			"Value": true
+		},
+		{
+			"$type": "NodeSentence",
+			"ID": "dNMmUNvgZi",
+			"EditorPosition": [
+				4830.0,
+				120.0
+			],
+			"NextID": "qiFqcnZ5Fc",
+			"Speaker": 0.0,
+			"DisplayName": "",
+			"Sentence": {
+				"English": "Sorry about that!"
+			},
+			"Voiceline": {
+				"English": ""
+			}
+		},
+		{
+			"$type": "NodeSentence",
+			"ID": "uud1AqfytK",
+			"EditorPosition": [
+				6150.0,
+				120.0
+			],
+			"NextID": "UEwPXqJHfH",
+			"Speaker": 1.0,
+			"DisplayName": "",
+			"Sentence": {
+				"English": "Well, you learned your lesson."
+			},
+			"Voiceline": {
+				"English": ""
+			}
+		},
+		{
+			"$type": "NodeSentence",
+			"ID": "TwTUZH2oQT",
+			"EditorPosition": [
+				3990.0,
+				120.0
+			],
+			"NextID": "ntUWYJm1rh",
+			"Speaker": 2.0,
+			"DisplayName": "",
+			"Sentence": {
+				"English": "Perhaps I did, hehe..."
+			},
+			"Voiceline": {
+				"English": ""
+			}
+		},
+		{
+			"$type": "NodeSentence",
+			"ID": "qiFqcnZ5Fc",
+			"EditorPosition": [
+				5310.0,
+				120.0
+			],
+			"NextID": "HymSczEjS0",
+			"Speaker": 1.0,
+			"DisplayName": "",
+			"Sentence": {
+				"English": "..."
+			},
+			"Voiceline": {
+				"English": ""
+			}
+		},
+		{
+			"$type": "NodeSentence",
+			"ID": "UEwPXqJHfH",
+			"EditorPosition": [
+				6630.0,
+				120.0
+			],
+			"NextID": "ZESNQxenoS",
+			"Speaker": 1.0,
+			"DisplayName": "",
+			"Sentence": {
+				"English": "I won't dwell on it... Your next time doing this though... That may be a different story altogether..."
+			},
+			"Voiceline": {
+				"English": ""
+			}
+		},
+		{
+			"$type": "NodeSentence",
+			"ID": "2b0A2IKVb8",
+			"EditorPosition": [
+				4140.0,
+				300.0
+			],
+			"NextID": "mV4h6gosNQ",
+			"Speaker": 1.0,
+			"DisplayName": "",
+			"Sentence": {
+				"English": "Or maybe you cliked \"Started over\" ?"
+			},
+			"Voiceline": {
+				"English": ""
+			}
+		},
+		{
+			"$type": "NodeSentence",
+			"ID": "cPEtvey5Fu",
+			"EditorPosition": [
+				4470.0,
+				480.0
+			],
+			"NextID": "q66bk3KjN2",
+			"Speaker": 2.0,
+			"DisplayName": "",
+			"Sentence": {
+				"English": "I swear on my mother's name that I did not jump ahead!"
+			},
+			"Voiceline": {
+				"English": ""
+			}
+		},
+		{
+			"$type": "NodeSentence",
+			"ID": "t2QFeY7Nmx",
+			"EditorPosition": [
+				5310.0,
+				480.0
+			],
+			"NextID": "AZdeJtTp5N",
+			"Speaker": 2.0,
+			"DisplayName": "",
+			"Sentence": {
+				"English": "How could you think I did that?"
+			},
+			"Voiceline": {
+				"English": ""
+			}
+		},
+		{
+			"$type": "NodeSentence",
+			"ID": "hyT0Y58s2l",
+			"EditorPosition": [
+				6150.0,
+				480.0
+			],
+			"NextID": "rgLs3U6bC3",
+			"Speaker": 1.0,
+			"DisplayName": "",
+			"Sentence": {
+				"English": "Oh..."
+			},
+			"Voiceline": {
+				"English": ""
+			}
+		},
+		{
+			"$type": "NodeSentence",
+			"ID": "lEf2oJZPCN",
+			"EditorPosition": [
+				8670.0,
+				270.0
+			],
+			"NextID": "VeiHx6IhKS",
+			"Speaker": 1.0,
+			"DisplayName": "",
+			"Sentence": {
+				"English": "We can sit around and enjoy the view!"
+			},
+			"Voiceline": {
+				"English": ""
+			}
+		},
+		{
+			"$type": "NodeCharacter",
+			"ID": "4HGT3E10q0",
+			"EditorPosition": [
+				5100.0,
+				300.0
+			],
+			"NextID": "Zm4DlnZZ9M",
+			"Character": 2.0,
+			"ActionType": "Update",
+			"Position": "Left",
+			"JoinAnimation": "Default",
+			"Portrait": "happy",
+			"Duration": 0.5,
+			"ZIndex": 0.0,
+			"Mirrored": false
+		},
+		{
+			"$type": "NodeCharacter",
+			"ID": "ntUWYJm1rh",
+			"EditorPosition": [
+				4470.0,
+				120.0
+			],
+			"NextID": "dNMmUNvgZi",
+			"Character": 2.0,
+			"ActionType": "Update",
+			"Position": "Left",
+			"JoinAnimation": "Default",
+			"Portrait": "sad",
+			"Duration": 0.5,
+			"ZIndex": 0.0,
+			"Mirrored": false
+		},
+		{
+			"$type": "NodeCharacter",
+			"ID": "Ww1d0x1QGP",
+			"EditorPosition": [
+				4140.0,
+				480.0
+			],
+			"NextID": "cPEtvey5Fu",
+			"Character": 2.0,
+			"ActionType": "Update",
+			"Position": "Left",
+			"JoinAnimation": "Default",
+			"Portrait": "surprised",
+			"Duration": 0.5,
+			"ZIndex": 0.0,
+			"Mirrored": false
+		},
+		{
+			"$type": "NodeCharacter",
+			"ID": "HwfR96FRcn",
+			"EditorPosition": [
+				9150.0,
+				450.0
+			],
+			"NextID": "sjii2hfdxa",
+			"Character": 2.0,
+			"ActionType": "Update",
+			"Position": "Left",
+			"JoinAnimation": "Default",
+			"Portrait": "happy",
+			"Duration": 0.5,
+			"ZIndex": 0.0,
+			"Mirrored": false
+		},
+		{
+			"$type": "NodeCondition",
+			"ID": "xpUFTXfNyx",
+			"EditorPosition": [
+				3630.0,
+				300.0
+			],
+			"IfNextID": "2b0A2IKVb8",
+			"ElseNextID": "Ww1d0x1QGP",
+			"Variable": "started_over",
+			"Operator": "=",
+			"Value": false
+		},
+		{
+			"$type": "NodeSentence",
+			"ID": "mV4h6gosNQ",
+			"EditorPosition": [
+				4620.0,
+				300.0
+			],
+			"NextID": "4HGT3E10q0",
+			"Speaker": 1.0,
+			"DisplayName": "",
+			"Sentence": {
+				"English": "That can tear a hole in the fabric of space-time some times..."
+			},
+			"Voiceline": {
+				"English": ""
+			}
+		},
+		{
+			"$type": "NodeCharacter",
+			"ID": "ZESNQxenoS",
+			"EditorPosition": [
+				7110.0,
+				270.0
+			],
+			"NextID": "LiTNId6nbV",
+			"Character": 2.0,
+			"ActionType": "Update",
+			"Position": "Left",
+			"JoinAnimation": "Default",
+			"Portrait": "neutral",
+			"Duration": 0.5,
+			"ZIndex": 0.0,
+			"Mirrored": false
+		},
+		{
+			"$type": "NodeCharacter",
+			"ID": "1w0ieRCkIF",
+			"EditorPosition": [
+				3630.0,
+				120.0
+			],
+			"NextID": "TwTUZH2oQT",
+			"Character": 2.0,
+			"ActionType": "Update",
+			"Position": "Left",
+			"JoinAnimation": "Default",
+			"Portrait": "happy",
+			"Duration": 0.5,
+			"ZIndex": 0.0,
+			"Mirrored": false
+		},
+		{
+			"$type": "NodeCharacter",
+			"ID": "AZdeJtTp5N",
+			"EditorPosition": [
+				5790.0,
+				480.0
+			],
+			"NextID": "hyT0Y58s2l",
+			"Character": 1.0,
+			"ActionType": "Update",
+			"Position": "Right",
+			"JoinAnimation": "Default",
+			"Portrait": "surprised",
+			"Duration": 0.5,
+			"ZIndex": 0.0,
+			"Mirrored": true
+		},
+		{
+			"$type": "NodeCharacter",
+			"ID": "HymSczEjS0",
+			"EditorPosition": [
+				5790.0,
+				120.0
+			],
+			"NextID": "uud1AqfytK",
+			"Character": 1.0,
+			"ActionType": "Update",
+			"Position": "Right",
+			"JoinAnimation": "Default",
+			"Portrait": "sad",
+			"Duration": 0.5,
+			"ZIndex": 0.0,
+			"Mirrored": true
+		},
+		{
+			"$type": "NodeCharacter",
+			"ID": "q66bk3KjN2",
+			"EditorPosition": [
+				4950.0,
+				480.0
+			],
+			"NextID": "t2QFeY7Nmx",
+			"Character": 2.0,
+			"ActionType": "Update",
+			"Position": "Left",
+			"JoinAnimation": "Default",
+			"Portrait": "angry",
+			"Duration": 0.5,
+			"ZIndex": 0.0,
+			"Mirrored": false
+		},
+		{
+			"$type": "NodeSentence",
+			"ID": "rgLs3U6bC3",
+			"EditorPosition": [
+				6630.0,
+				480.0
+			],
+			"NextID": "ZESNQxenoS",
+			"Speaker": 1.0,
+			"DisplayName": "",
+			"Sentence": {
+				"English": "Sorry I doubted you..."
+			},
+			"Voiceline": {
+				"English": ""
+			}
+		},
+		{
+			"$type": "NodeSentence",
+			"ID": "Zm4DlnZZ9M",
+			"EditorPosition": [
+				5460.0,
+				300.0
+			],
+			"NextID": "ZESNQxenoS",
+			"Speaker": 2.0,
+			"DisplayName": "",
+			"Sentence": {
+				"English": "I think I did..."
+			},
+			"Voiceline": {
+				"English": ""
+			}
+		},
+		{
+			"$type": "NodeSentence",
+			"ID": "LiTNId6nbV",
+			"EditorPosition": [
+				7440.0,
+				270.0
+			],
+			"NextID": "CqupyRuy1p",
+			"Speaker": 2.0,
+			"DisplayName": "",
+			"Sentence": {
+				"English": "What should we do?"
+			},
+			"Voiceline": {
+				"English": ""
+			}
+		},
+		{
+			"$type": "NodeSentence",
+			"ID": "xBHya67OWs",
+			"EditorPosition": [
+				2760.0,
+				120.0
+			],
+			"NextID": "ncvtXLBmUh",
+			"Speaker": 1.0,
+			"DisplayName": "",
+			"Sentence": {
+				"English": "Did you jump ahead in the last scene, Sophia?"
+			},
+			"Voiceline": {
+				"English": ""
+			}
+		},
+		{
+			"$type": "NodeChoice",
+			"ID": "CqupyRuy1p",
+			"EditorPosition": [
+				7890.0,
+				270.0
+			],
+			"NextID": "Je0iQQS2FS",
+			"OptionsID": [
+				"BMd9yGFRJM",
+				"wmPENA0KPN"
+			]
+		},
+		{
+			"$type": "NodeOption",
+			"ID": "BMd9yGFRJM",
+			"EditorPosition": [
+				0.0,
+				0.0
+			],
+			"NextID": "Je0iQQS2FS",
+			"Option": {
+				"English": "Sit around"
+			},
+			"EnableByDefault": true,
+			"OneShot": false
+		},
+		{
+			"$type": "NodeOption",
+			"ID": "wmPENA0KPN",
+			"EditorPosition": [
+				0.0,
+				0.0
+			],
+			"NextID": "ZWJ3OO1DbQ",
+			"Option": {
+				"English": "Find a way to escape"
+			},
+			"EnableByDefault": true,
+			"OneShot": false
+		},
+		{
+			"$type": "NodeCharacter",
+			"ID": "Je0iQQS2FS",
+			"EditorPosition": [
+				8370.0,
+				270.0
+			],
+			"NextID": "lEf2oJZPCN",
+			"Character": 1.0,
+			"ActionType": "Update",
+			"Position": "Right",
+			"JoinAnimation": "Default",
+			"Portrait": "happy",
+			"Duration": 0.5,
+			"ZIndex": 0.0,
+			"Mirrored": true
+		},
+		{
+			"$type": "NodeCharacter",
+			"ID": "ZWJ3OO1DbQ",
+			"EditorPosition": [
+				8370.0,
+				450.0
+			],
+			"NextID": "hrJCMwpwwP",
+			"Character": 1.0,
+			"ActionType": "Update",
+			"Position": "Right",
+			"JoinAnimation": "Default",
+			"Portrait": "happy",
+			"Duration": 0.5,
+			"ZIndex": 0.0,
+			"Mirrored": true
+		},
+		{
+			"$type": "NodeSentence",
+			"ID": "hrJCMwpwwP",
+			"EditorPosition": [
+				8670.0,
+				450.0
+			],
+			"NextID": "HwfR96FRcn",
+			"Speaker": 1.0,
+			"DisplayName": "",
+			"Sentence": {
+				"English": "We gotta get out of here, man!"
+			},
+			"Voiceline": {
+				"English": ""
+			}
+		},
+		{
+			"$type": "NodeCharacter",
+			"ID": "VeiHx6IhKS",
+			"EditorPosition": [
+				9150.0,
+				240.0
+			],
+			"NextID": "gGjz0ppVD6",
+			"Character": 2.0,
+			"ActionType": "Update",
+			"Position": "Left",
+			"JoinAnimation": "Default",
+			"Portrait": "sad",
+			"Duration": 0.5,
+			"ZIndex": 0.0,
+			"Mirrored": false
+		},
+		{
+			"$type": "NodeSentence",
+			"ID": "sjii2hfdxa",
+			"EditorPosition": [
+				9480.0,
+				450.0
+			],
+			"NextID": "GjZGEDotUV",
+			"Speaker": 2.0,
+			"DisplayName": "",
+			"Sentence": {
+				"English": "Good call."
+			},
+			"Voiceline": {
+				"English": ""
+			}
+		},
+		{
+			"$type": "NodeSentence",
+			"ID": "gGjz0ppVD6",
+			"EditorPosition": [
+				9480.0,
+				270.0
+			],
+			"NextID": "C2KBmeGR3g",
+			"Speaker": 2.0,
+			"DisplayName": "",
+			"Sentence": {
+				"English": "..."
+			},
+			"Voiceline": {
+				"English": ""
+			}
+		},
+		{
+			"$type": "NodeSentence",
+			"ID": "C2KBmeGR3g",
+			"EditorPosition": [
+				9960.0,
+				270.0
+			],
+			"NextID": "GjZGEDotUV",
+			"Speaker": 2.0,
+			"DisplayName": "",
+			"Sentence": {
+				"English": "Guess there's nothing else but that..."
+			},
+			"Voiceline": {
+				"English": ""
+			}
+		},
+		{
+			"$type": "NodeSentence",
+			"ID": "GjZGEDotUV",
+			"EditorPosition": [
+				10440.0,
+				450.0
+			],
+			"NextID": "gKFwbVqvOm",
+			"Speaker": 0.0,
+			"DisplayName": "",
+			"Sentence": {
+				"English": "And thus started Sophia's and Dani's other journey at the Steppes..."
+			},
+			"Voiceline": {
+				"English": ""
+			}
+		},
+		{
+			"$type": "NodeEndPath",
+			"ID": "gKFwbVqvOm",
+			"EditorPosition": [
+				10890.0,
+				450.0
+			],
+			"NextID": -1,
+			"NextStory": "main.json"
+		},
+		{
+			"$type": "NodeBackground",
+			"ID": "rE6xb9cEip",
+			"EditorPosition": [
+				417.435791015625,
+				52.1367111206055
+			],
+			"NextID": "Ig78Ub0rc8",
+			"Image": "assets/backgrounds/community_garden.jpg",
+			"Transition": "No Transition",
+			"Duration": 0.0
+		},
+		{
+			"$type": "NodeRoot",
+			"ID": "xZvsPEvg2X",
+			"EditorPosition": [
+				-18.9999980926514,
+				133.33332824707
+			],
+			"NextID": "rE6xb9cEip"
+		},
+		{
+			"$type": "NodeCharacter",
+			"ID": "Ig78Ub0rc8",
+			"EditorPosition": [
+				1080.0,
+				120.0
+			],
+			"NextID": "7rtdhC3nEa",
+			"Character": 2.0,
+			"ActionType": "Join",
+			"Position": "Left",
+			"JoinAnimation": "Slide In Auto",
+			"Portrait": "neutral",
+			"Duration": 0.5,
+			"ZIndex": 0.0,
+			"Mirrored": false
+		},
+		{
+			"$type": "NodeCharacter",
+			"ID": "Uf122Pt2ZO",
+			"EditorPosition": [
+				1919.0,
+				119.0
+			],
+			"NextID": "KIDevCsr7g",
+			"Character": 1.0,
+			"ActionType": "Join",
+			"Position": "Left",
+			"JoinAnimation": "Slide In Auto",
+			"Portrait": "angry",
+			"Duration": 0.5,
+			"ZIndex": 0.0,
+			"Mirrored": true
+		},
+		{
+			"$type": "NodeSentence",
+			"ID": "7rtdhC3nEa",
+			"EditorPosition": [
+				1440.0,
+				120.0
+			],
+			"NextID": "Uf122Pt2ZO",
+			"Speaker": 2.0,
+			"DisplayName": "",
+			"Sentence": {
+				"English": "Why are you here again ?"
+			},
+			"Voiceline": {
+				"English": ""
+			}
+		}
+	],
+	"Characters": [
+		{
+			"ID": "wlCyQ5vnVD",
+			"Protected": true,
+			"Character": {
+				"Name": "_NARRATOR",
+				"Nicknames": "",
+				"DisplayName": "",
+				"Description": "",
+				"Portraits": [],
+				"DefaultPortrait": ""
+			},
+			"EditorIndex": 0.0
+		},
+		{
+			"ID": "ucEJEZjOb7",
+			"Protected": false,
+			"Character": {
+				"Name": "Dani",
+				"Portraits": [
+					{
+						"ID": "iMck7",
+						"Name": "neutral",
+						"Portrait": {
+							"ImagePath": "assets/dani/dani_neutral.png",
+							"Mirror": false
+						},
+						"EditorIndex": 0.0
+					},
+					{
+						"ID": "pkLLO",
+						"Name": "angry",
+						"Portrait": {
+							"ImagePath": "assets/dani/dani_angry.png"
+						},
+						"EditorIndex": 1.0
+					},
+					{
+						"ID": "BtA2n",
+						"Name": "happy",
+						"Portrait": {
+							"ImagePath": "assets/dani/dani_happy.png"
+						},
+						"EditorIndex": 2.0
+					},
+					{
+						"ID": "M7mrj",
+						"Name": "sad",
+						"Portrait": {
+							"ImagePath": "assets/dani/dani_sad.png"
+						},
+						"EditorIndex": 3.0
+					},
+					{
+						"ID": "9nJMG",
+						"Name": "surprised",
+						"Portrait": {
+							"ImagePath": "assets/dani/dani_surprised.png"
+						},
+						"EditorIndex": 4.0
+					}
+				],
+				"Nicknames": "dani",
+				"DisplayName": "",
+				"Description": "",
+				"DefaultPortrait": "iMck7"
+			},
+			"EditorIndex": 1.0
+		},
+		{
+			"ID": "vzZLCo4zWW",
+			"Protected": false,
+			"Character": {
+				"Name": "Sophia",
+				"Nicknames": "sophia",
+				"Portraits": [
+					{
+						"ID": "HqRLA",
+						"Name": "neutral",
+						"Portrait": {
+							"ImagePath": "assets/sophia/sophia_neutral.png"
+						},
+						"EditorIndex": 0.0
+					},
+					{
+						"ID": "uZbJ2",
+						"Name": "happy",
+						"Portrait": {
+							"Mirror": false,
+							"ImagePath": "assets/sophia/sophia_happy.png"
+						},
+						"EditorIndex": 1.0
+					},
+					{
+						"ID": "E5wlF",
+						"Name": "angry",
+						"Portrait": {
+							"ImagePath": "assets/sophia/sophia_angry.png"
+						},
+						"EditorIndex": 2.0
+					},
+					{
+						"ID": "4JRDt",
+						"Name": "sad",
+						"Portrait": {
+							"ImagePath": "assets/sophia/sophia_sad.png"
+						},
+						"EditorIndex": 3.0
+					},
+					{
+						"ID": "6xTcV",
+						"Name": "surprised",
+						"Portrait": {
+							"ImagePath": "assets/sophia/sophia_surprised.png"
+						},
+						"EditorIndex": 4.0
+					}
+				],
+				"DisplayName": "",
+				"Description": "",
+				"DefaultPortrait": "HqRLA"
+			},
+			"EditorIndex": 2.0
+		}
+	],
+	"Variables": [
+		{
+			"Name": "jump_ahead",
+			"Type": "Boolean",
+			"Value": false
+		},
+		{
+			"Name": "started_over",
+			"Type": "Boolean",
+			"Value": false
+		}
+	],
+	"Languages": [
+		"English"
+	]
+}
